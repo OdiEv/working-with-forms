@@ -1,0 +1,74 @@
+.header
+	&__nav
+		max-width: 408px
+		position: absolute
+		top: 0
+		left: 0
+		padding: 85px 83px 280px 67px 
+		background-color: $blue
+		box-sizing: border-box
+		z-index: 101
+		transform: translateX(-1000px)
+		transition: transform 0.6s ease-out
+		&.active
+			transform: translateX(0)
+		&-list
+			ul li 
+				line-height: 44px
+				a
+					font-size: 26px
+					font-weight: 500
+					color: #f0f0f0
+					transition: color 0.3s ease
+					&:hover
+						color: $red
+		&-social
+			display: inline-block
+			margin-top: 114px
+			margin-bottom: 65px
+			a
+				margin-right: 20px
+				color: #f0f0f0
+				transition: color 0.3s ease
+				&:last-child
+					margin-right: 0
+				.fa
+					font-size: 21px
+				&:hover
+					color: $red
+		&-contacts
+			line-height: 23px
+			p
+				font-size: 14px
+				font-weight: 500
+				color: #f0f0f0
+			a
+				font-size: 14px
+				font-weight: 500
+				color: #f0f0f0
+				transition: color 0.3s ease
+				&:hover
+					color: $red
+
+.btncloseNav
+	position: absolute
+	top: 93px
+	left: 447px
+	width: 16px
+	height: 16px
+	cursor: pointer
+	z-index: 100
+	&:before, &:after
+		content: ''
+		position: absolute
+		left: -2px
+		width: 20px
+		height: 3px
+		background-color: $blue
+		border-radius: 25%
+	&:before
+		top: 6.5px
+		transform: rotate(45deg)
+	&:after
+		bottom: 6.5px
+		transform: rotate(135deg)

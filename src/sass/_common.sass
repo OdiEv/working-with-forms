@@ -1,0 +1,143 @@
+body
+	font-size: 16px
+	font-family: $r_n
+	font-weight: 400
+	color: #fff
+
+.container
+	max-width: 1180px
+	margin: 0 auto
+	box-sizing: border-box
+
+.flex
+	display: flex
+
+a
+	text-decoration: none
+
+.h1
+	font-size: 72px
+	font-weight: 900
+
+.h2
+	font-size: 32px
+	font-weight: 700
+
+.h3
+	font-size: 24px
+	font-weight: 700
+
+.h4
+	font-size: 22px
+	font-weight: 500
+
+.h5
+	font-size: 48px
+	font-weight: 600
+
+.btn
+	display: block
+	padding: 13px 25.5px 12px
+	text-transform: uppercase
+	font-family: $r_n
+	font-weight: 600
+	font-size: 16px
+	color: #fff
+	background-color: $red
+	border: 2px solid #fff
+	transition: border 0.3s ease
+	transition: background-color 0.3s ease
+	cursor: pointer
+	outline: none
+	&:hover
+		border: 2px solid $blue
+		background-color: $blue
+	&_color
+		background-color: $blue
+		&:hover
+			border: 2px solid $red
+			background-color: $red
+	&_form
+		display: block
+		padding: 12px 82px 11px 82.5px
+		text-transform: uppercase
+		font-family: $r_n
+		font-weight: 700
+		font-size: 17px
+		color: $blue
+		background-color: #fff
+		border: none
+		transition: background-color 0.3s ease
+		transition: color 0.3s ease
+		cursor: pointer
+		outline: none
+		&:hover
+			background-color: $red
+			color: #fff
+		&-contact
+			margin: 0 auto
+			padding: 16px 185px 17px 200px
+			color: #fff
+			background-color: $blue
+			transition: background-color 0.3s ease
+			&:hover
+				background-color: $red
+	&-creative
+		display: inline-block
+		padding: 14px 50px 13px 46px
+		text-transform: uppercase
+		font-family: $r_n
+		font-weight: 700
+		font-size: 18px
+		color: $red
+		white-space: nowrap
+		background-color: #fff
+		border: none
+		cursor: pointer
+		outline: none
+		transition: color 0.3s ease
+		&:hover
+			color: $blue
+
+.scroll_top
+	position: fixed
+	right: -120px
+	bottom: 30px
+	width: 50px
+	height: 50px
+	line-height: 50px
+	text-align: center
+	font-size: 25px
+	color: $red
+	background-color: $blue
+	border-radius: 50%
+	border: 1px solid $red 
+	box-shadow: 0 0 10px 1px $red
+	cursor: pointer
+	opacity: 0.7
+	z-index: 50
+	transition: opacity 0.4s ease
+	transition: box-shadow 0.4s ease
+	transition: color 0.4s ease
+	&.active
+		right: 30px
+	&:hover
+		opacity: 1
+		color: $grey
+		box-shadow: none
+
+.main_page
+	padding-top: 50px
+	ul 
+		li 
+			text-align: center
+			margin-bottom: 30px
+			&:last-child 
+				margin-bottom: 0
+			a 
+				color: $blue
+				font-size: 42px
+				font-weight: 600
+				text-transform: uppercase
+				&:hover
+					color: $red

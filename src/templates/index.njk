@@ -1,0 +1,34 @@
+---
+title: Main
+---
+
+{% extends "./layouts/_layout.njk" %}
+
+{% block content %}
+
+{% set pages = [
+	{"html": "home.html",
+	 "name": "Home"
+	},
+	{"html": "analytics.html",
+	 "name": "Analytics"
+	},
+	{"html": "creative.html",
+	 "name": "Creative"
+	},
+	{"html": "contact.html",
+	 "name": "Contact"
+	}
+]%}
+
+	<div class="container">
+    <nav class="main_page">
+      <ul>
+      	{% for page in pages %}
+	        <li><a href={{page.html}}>{{page.name}}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+
+{% endblock %}

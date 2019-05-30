@@ -1,0 +1,90 @@
+---
+title: Main
+---
+
+{% extends "./layouts/_layout.njk" %}
+
+{% block content %}
+
+  {% include "./partials/_header.njk" %}
+
+  <main>
+
+    <section class="bground" style="background-image: url('img/background.png');">
+      <div class="phrase">
+        <div class="container">
+          <h2 class="h2">About us</h2>
+          <div class="flex">
+            <div class="text text-1">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              </p>
+            </div>
+            <div class="text text-2">
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="phrase-after phrase-contact"></div>
+      </div>
+    </section>
+
+    <section class="phrase-devices"></section>
+
+    <section class="contact">
+      <div class="contact-outer">
+        <div class="contact-inner">
+          <div class="contact-inner-info">
+            <h2 class="h2">
+              Get in touch
+            </h2>
+            <p>
+              We would love to speak to you.  Feel free to call, send us an email, Tweet us or simply complete the enquiry form.
+            </p>
+          </div>
+          <form class="form_cont">
+            <div class="flex">
+              <label for="name_cont" class="label_cont  label_cont-name">
+                <input type="text" id="name_cont" name="name_cont" placeholder="Your name" class="input_cont">
+                <span class="error">Error message</span>
+              </label>
+              <label for="telephone_cont" class="label_cont label_cont-telephone">
+                <input type="text" id="telephone_cont" name="telephone_cont" placeholder="Telephone number" class="input_cont">
+                <span class="error">Error message</span>
+              </label>
+              <label for="company_cont" class="label_cont label_cont-company">
+                <input type="text" id="company_cont" name="company_cont" placeholder="Company name" class="input_cont">
+                <span class="error">Error message</span>
+              </label>
+              <label for="country_cont" class="label_cont label_cont-country">
+                <input type="text" id="country_cont" name="country_cont" placeholder="Country" class="input_cont">
+                <span class="error">Error message</span>
+              </label>
+              <label for="city_cont" class="label_cont label_cont-city">
+                <input type="text" id="city_cont" name="city_cont" placeholder="City" class="input_cont">
+                <span class="error">Error message</span>
+              </label>
+              <label for="email_cont" class="label_cont label_cont-email">
+                <input type="text" id="email_cont" name="email_cont" placeholder="Email Address" class="input_cont">
+                <span class="error">Error message</span>
+              </label>
+              <label for="message_cont" class="label_cont label_cont-message">
+                <textarea name="message_cont" id="message_cont" placeholder="Your Message" class="input_cont textarea_cont"></textarea>
+              </label>
+            </div>
+            <button type="submit" class="btn_form btn_form-contact">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  {% include "./partials/_footer.njk" %}
+  {% include "./partials/_headerFixed.njk" %}
+  {% include "./partials/_scroll.njk" %}
+{% endblock %}

@@ -1,0 +1,71 @@
+@import "headerNav"
+@import "headerContact"
+@import "headerThanks"
+
+.header
+	position: relative
+	padding-top: 84px
+	padding-bottom: 28px
+	border-bottom: 1px solid transparent
+	.flex
+		justify-content: space-between
+	&__logo
+		position: absolute
+		top: 27px
+		left: 50%
+		transform: translateX(-50%)
+		&-fixed
+			position: absolute
+			top: 10px
+			left: 50%
+			transform: translateX(-50%)
+	&__body
+		overflow: hidden
+	&__overlay
+		display: none
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba($pink, 0.4)
+		z-index: 98
+		overflow-y: auto
+	&__hidden
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 99
+		
+
+.bars
+	color: $blue
+	font-size: 25px
+	cursor: pointer
+
+.envelope
+	color: $red
+	font-size: 27px
+	cursor: pointer
+
+.fixed-menu
+	display: none
+	position: fixed
+	top: 0 
+	left: 0
+	width: 100%
+	padding-top: 12px
+	padding-bottom: 10px
+	background-color: $blue
+	box-shadow: 0 0 4px 2px $red
+	z-index: 50
+	transform: translateY(-100px)
+	transition: transform 0.3s ease
+	&.active
+		transform: translateY(0)
+	.bars
+		color: #fff
+	.flex
+		justify-content: space-between

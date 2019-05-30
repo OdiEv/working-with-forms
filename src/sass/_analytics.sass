@@ -1,0 +1,279 @@
+.banner-2
+	padding: 17px 0
+	background: no-repeat center
+	background-size: cover
+	&-inner
+		padding-top: 140px
+		padding-bottom: 163px
+		background: no-repeat center
+		background-size: cover
+		color: $blue
+	&-info
+		max-width: 535px
+		padding-left: 43px
+		box-sizing: border-box
+		.h4
+			font-weight: 900
+			color: $red
+			text-transform: uppercase
+		.h2
+			margin-top: 15px
+			margin-bottom: 15px
+			font-size: 38px
+			line-height: 41px
+			font-weight: 900
+		p
+			margin-bottom: 10px
+			font-size: 21px
+			line-height: 27px
+			font-weight: 600
+			&:last-of-type
+				font-size: 16px
+				line-height: 24px
+				font-weight: 500
+
+.values
+	padding-top: 151px
+	padding-bottom: 96px
+	&__inner
+		justify-content: space-around
+	.value
+		position: relative
+		max-width: 350px
+		padding-bottom: 0
+		text-align: center
+		box-sizing: border-box
+		.flex
+			margin-top: 19px
+			margin-bottom: 10px
+			color: $red
+			text-transform: uppercase
+			justify-content: center
+			align-items: center
+		p
+			color: $dark_blue
+			line-height: 23px
+			font-size: 17px
+			font-weight: 500
+		&:before
+			content: ''
+			display: inline-block
+			width: 135px
+			height: 130px
+			background: url("../img/sprite3.png") no-repeat
+			box-sizing: border-box
+		&-1
+			&:before
+				background-position: 6px 0
+		&-2
+			&:before
+				background-position: -353px 0
+		&-3
+			&:before
+				background-position: -707px 0
+
+.print
+	padding-top: 90px
+	padding-bottom: 100px
+	background-color: $grey
+	.container
+		padding: 0
+		max-width: 1203px
+	.flex
+		flex-wrap: wrap
+	&__text
+		max-width: 502px
+		padding-left: 45px
+		padding-right: 20px
+		box-sizing: border-box
+		&-1
+			padding-top: 96px
+		&-2
+			padding: 89px 40px 0 20px
+		&-3
+			padding-top: 123px
+		.h2
+			margin-bottom: 15px
+			text-transform: uppercase
+			line-height: 33px
+			color: $blue
+		p
+			line-height: 24px
+			color: #000
+		.blue_light
+			margin-bottom: 10px
+			font-size: 18px
+			font-weight: 500
+			color: $blue_light
+	&__window
+		position: relative
+		max-width: 701px
+		box-sizing: border-box
+		&-1
+			margin-bottom: 39px
+		&-2
+			margin-bottom: 2px
+		&-phone
+			position: absolute
+			top: 182px
+			right: -11px
+		.windowp
+			width: 100%
+			&-768
+				display: none		
+			
+
+.schedule
+	padding: 50px 55px
+	background: no-repeat center
+	background-size: cover
+	.container
+		padding: 0 25px
+		&-schedule
+			position: relative
+			max-width: 1290px
+			margin: 0 auto
+			padding-top: 80px
+			background-color: $blue
+			text-align: center
+	.h2
+		margin-bottom: 15px
+		font-size: 43px
+		text-transform: uppercase
+		font-weight: 700
+	p
+		margin: 0 auto
+		max-width: 820px
+		font-size: 21px
+		font-weight: 500
+		line-height: 30px
+	&__graphic
+		height: 382px
+		background: url('../img/pic_schedule.png') no-repeat bottom center
+		background-size: cover
+
+.icons-analytics
+	padding-top: 120px
+	padding-bottom: 34px
+	background-color: $red_a
+	text-align: center
+	.h2
+		margin-bottom: 81px
+		text-transform: uppercase
+	.flex
+		flex-wrap: wrap
+		justify-content: space-evenly
+	.icon
+		width: 330px
+		margin-bottom: 66px
+		p
+			margin-top: 5px
+			font-size: 19px
+			font-weight: 500
+			line-height: 24px
+		&:before
+			content: ''
+			display: inline-block
+			width: 60px
+			height: 55px
+			background: url("../img/sprite4.png") no-repeat
+			box-sizing: border-box			
+		&-1
+			&:before
+				background-position: 0 0
+		&-2
+			&:before
+				background-position: -63px 0
+		&-3
+			&:before
+				background-position: -124px 0
+		&-4
+			&:before
+				background-position: -186px 0
+		&-5
+			&:before
+				background-position: -253px 0
+		&-6
+			&:before
+				background-position: -324px 0
+		&-7
+			&:before
+				background-position: -391px 0
+		&-8
+			&:before
+				background-position: -466px 0
+		&-9
+			&:before
+				background-position: -543px 0
+
+.partners-analytics
+	padding: 113px 0 110px
+	color: $blue
+	text-align: center
+	.h2
+		margin-bottom: 0
+		text-transform: uppercase
+	.flex
+		max-width: 1023px
+		margin: 47px auto 0
+		flex-wrap: wrap
+		justify-content: center
+	.partner
+		position: relative
+		margin: 3px 
+		height: 244px
+		background-color: $grey
+		transition: box-shadow 0.3s ease
+		&:hover
+			box-shadow: 0 0 10px 1px $pink
+			.partner-image
+			span
+				color: $blue
+			p
+				color: $red
+		&-image
+			position: absolute
+			top: 155px
+			left: 50%
+			transform: translateX(-50%)
+		&__google
+			width: 32.74%
+		&__twitter
+			width: 32.74%
+		&__facebook
+			width: 32.74%
+		&__indeed
+			width: 24.41%
+			height: 252px
+		&__google_analytics
+			width: 24.41%
+			height: 252px
+		&__bing
+			width: 24.41%
+			height: 252px
+		&__linkedin
+			width: 24.41%
+			height: 252px
+		span
+			position: absolute
+			top: 41px
+			left: 50%
+			transform: translateX(-50%)
+			font-size: 26px
+			line-height: 27px
+			font-weight: 700
+			color: $blue_grey
+			transition: color 0.3s ease
+			opacity: 0.51
+		p
+			position: absolute
+			top: 107px
+			left: 50%
+			transform: translateX(-50%)
+			font-size: 13px
+			font-weight: 600
+			color: $blue
+			transition: color 0.3s ease
+			white-space: nowrap
+			letter-spacing: 0.12em
+			opacity: 0.37
