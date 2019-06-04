@@ -7,6 +7,11 @@
 	padding-top: 84px
 	padding-bottom: 28px
 	border-bottom: 1px solid transparent
+	+r(480)
+		margin-bottom: 152px
+		padding-top: 10px
+		padding-bottom: 12px
+		background-color: $blue
 	.flex
 		justify-content: space-between
 	&__logo
@@ -14,11 +19,15 @@
 		top: 27px
 		left: 50%
 		transform: translateX(-50%)
+		+r(480)
+			top: 79px
 		&-fixed
 			position: absolute
 			top: 10px
 			left: 50%
 			transform: translateX(-50%)
+			+r(480)
+				display: none
 	&__body
 		overflow: hidden
 	&__overlay
@@ -39,11 +48,12 @@
 		bottom: 0
 		z-index: 99
 		
-
 .bars
 	color: $blue
 	font-size: 25px
 	cursor: pointer
+	+r(480)
+		color: #fff
 
 .envelope
 	color: $red

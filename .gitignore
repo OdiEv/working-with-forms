@@ -28,6 +28,7 @@ nbproject
 .sass-cache
 .tmp
 node_modules
+build/
 bower_components
 site/lib
 .gulp

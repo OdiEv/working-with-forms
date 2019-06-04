@@ -5,6 +5,83 @@ title: Main
 {% extends "./layouts/_layout.njk" %}
 
 {% block content %}
+
+  {% set values = [
+    {"number": "1",
+     "name": "Powerful optimization",
+     "text": "Automate any campaign entity across search and social ad networks."
+    },
+    {"number": "2",
+     "name": "More control",
+     "text": "Maintain control over optimizations with custom tasks, look back periods, and configurations."
+    },
+    {"number": "3",
+     "name": "Continuos monitoring",
+     "text": "Always have eyes on your campaign performance, even when you´re not in front of a computer."  
+    }
+  ]%}
+
+  {% set icons = [
+    {"number": "1",
+     "text": "Real-time behavioral targeting"
+    },
+    {"number": "2",
+     "text": "Easily manage and prioritize overlapping audience"
+    },
+    {"number": "3",
+     "text": "Recommended audiences to identify new revenue-driving opportunities"
+    },
+    {"number": "4",
+     "text": "Compatible with mobile web and responsive sites"
+    },
+    {"number": "5",
+     "text": "Developer tools and APIs for  maximun flexibility"
+    },
+    {"number": "6",
+     "text": "Upload audiences for custom  targeting"
+    },
+    {"number": "7",
+     "text": "Performance measurement  you can trust"
+    },
+    {"number": "8",
+     "text": "Visual editor for easy updates"
+    },
+    {"number": "9",
+     "text": "Get up and running quicly"
+    }
+  ]%}
+
+   {% set partners = [
+    {"name": "google",
+     "head": "Campaign Performance",
+     "text": "Google adwords"
+    },
+    {"name": "twitter",
+     "head": "Campaign Performance",
+     "text": "Twitter Ads"
+    },
+    {"name": "facebook",
+     "head": "Demographic Performance",
+     "text": "Facebook Ads"
+    },
+    {"name": "indeed",
+     "head": "Campaign Performance",
+     "text": "Indeed Sponsored Jobs"
+    },
+    {"name": "google_analytics",
+     "head": "Search Team Performance",
+     "text": "Google Analytics"
+    },
+    {"name": "bing",
+     "head": "Keywords Performance",
+     "text": "Bing Ads"
+    },
+    {"name": "linkedin",
+     "head": "Account Performance",
+     "text": "Linkedin Ads"
+    }
+  ]%}
+
 	{% include "./partials/_header.njk" %}
 
   <main>
@@ -45,36 +122,14 @@ title: Main
     <section class="values">
       <div class="container">
         <div class="values__inner flex">
-          <div class="value value-1">
-            <div class="flex">
-              <h3 class="h3">
-                Powerful optimization
-              </h3>
+          {% for value in values %}
+            <div class="value value-{{value.number}}">
+              <div class="flex">
+                <h3 class="h3">{{value.name}}</h3>
+              </div>
+              <p>{{value.text}}</p>
             </div>
-            <p>
-              Automate any campaign entity across search and social ad networks
-            </p>
-          </div>
-          <div class="value value-2">
-            <div class="flex">
-              <h3 class="h3">
-                More control
-              </h3>
-            </div>
-            <p>
-              Maintain control over optimizations with custom tasks, look back periods, and configurations.
-            </p>
-          </div>
-          <div class="value value-3">
-            <div class="flex">
-              <h3 class="h3">
-                Continuos monitoring
-              </h3>
-            </div>
-            <p>
-              Always have eyes on your campaign performance, even when you´re not in front of a computer.
-            </p>
-          </div>
+          {% endfor %}
         </div>
       </div>      
     </section>
@@ -150,33 +205,11 @@ title: Main
           More about ora worldwide
         </h2>
         <div class="flex">
-          <div class="icon icon-1">
-            <p>Real-time behavioral targeting</p>
-          </div>
-          <div class="icon icon-2">
-            <p>Easily manage and prioritize overlapping audience</p>
-          </div>
-          <div class="icon icon-3">
-            <p>Recommended audiences to identify new revenue-driving opportunities</p>
-          </div>
-          <div class="icon icon-4">
-            <p>Compatible with mobile web and responsive sites</p>
-          </div>
-          <div class="icon icon-5">
-            <p>Developer tools and APIs for  maximun flexibility</p>
-          </div>
-          <div class="icon icon-6">
-            <p>Upload audiences for custom  targeting</p>
-          </div>
-          <div class="icon icon-7">
-            <p>Performance measurement  you can trust</p>
-          </div>
-          <div class="icon icon-8">
-            <p>Visual editor for easy updates</p>
-          </div>
-          <div class="icon icon-9">
-            <p>Get up and running quicly</p>
-          </div>
+          {% for icon in icons %}
+             <div class="icon icon-{{icon.number}}">
+              <p>{{icon.text}}</p>
+            </div>
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -187,45 +220,16 @@ title: Main
           Access the right metrics, all the time.
         </h2>
         <div class="flex">
-          <a href="#" class="partner partner__google">
-            <span>Campaign Performance</span>
-            <p>Google adwords</p>
-            <img class="partner-image" src="img/partners/google.png" alt="google">
-          </a>
-           <a href="#" class="partner partner__twitter">
-            <span>Campaign Performance</span>
-            <p>Twitter Ads</p>
-            <img class="partner-image" src="img/partners/twitter.png" alt="twitter">
-          </a>
-          <a href="#" class="partner partner__facebook">
-            <span>Demographic Performance</span>
-            <p>Facebook Ads</p>
-            <img class="partner-image" src="img/partners/facebook.png" alt="facebook">
-          </a>
-           <a href="#" class="partner partner__indeed">
-            <span>Campaign Performance</span>
-            <p>Indeed Sponsored Jobs</p>
-            <img class="partner-image" src="img/partners/indeed.png" alt="indeed">
-          </a>    
-          <a href="#" class="partner partner__google_analytics">
-            <span>Search Team Performance</span>
-            <p>Google Analytics</p>
-            <img class="partner-image" src="img/partners/google_analytics.png" alt="instagram">
-          </a>
-          <a href="#" class="partner partner__bing">
-            <span>Keywords Performance</span>
-            <p>Bing Ads</p>
-            <img class="partner-image" src="img/partners/bing.png" alt="bing">
-          </a>
-          <a href="#" class="partner partner__linkedin">
-            <span>Account Performance</span>
-            <p>Linkedin Ads</p>
-            <img class="partner-image" src="img/partners/linkedin.png" alt="linkedin">
-          </a>
+          {% for partner in partners %}
+            <a href="#" class="partner partner__{{partner.name}}">
+              <span>{{partner.head}}</span>
+              <p>{{partner.text}}</p>
+              <img class="partner-image" src="img/partners/{{partner.name}}.png" alt={{partner.name}}>
+            </a>
+          {% endfor %}
         </div>
       </div>
-    </section>    
-
+    </section>
 
   </main>
   

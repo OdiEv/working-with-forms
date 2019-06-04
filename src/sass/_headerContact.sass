@@ -11,6 +11,11 @@
 		z-index: 101
 		transform: translateY(-1000px)
 		transition: transform 0.5s ease-out
+		+r(1024)
+			padding-top: 59px
+		+r(750)
+			padding-top: 44px
+			padding-bottom: 54px
 		&.active
 			transform: translateY(0)
 		&:after
@@ -20,15 +25,31 @@
 			right: 120px
 			border: 26px solid transparent
 			border-top: 26px solid $blue
+			+r(1024)
+				right: 0
+			+r(750)
+				display: none
 		&-head
 			margin: 0 auto
 			margin-bottom: 23px
 			text-align: center
+			+r(1024)
+				max-width: 525px
+				margin-bottom: 39px
+			+r(750)
+				margin-bottom: 20px
 			.h5
 				text-transform: uppercase
 				margin-bottom: 40px
+				+r(1024)
+					margin-bottom: 24px
 			p
 				font-size: 17px
+				+r(1024)
+					line-height: 21px
+				+r(750)
+					font-size: 16px
+					line-height: 22px
 
 .btncloseCont
 	position: absolute
@@ -37,6 +58,11 @@
 	width: 21px
 	height: 21px
 	cursor: pointer
+	+r(1024)
+		right: 33px
+	+r(750)
+		top: 14px
+		right: 22px
 	&:before, &:after
 		content: ''
 		position: absolute
@@ -62,9 +88,25 @@
 		justify-content: center
 		flex-direction: column
 		align-content: center
+		+r(1024)
+			margin-bottom: 40px
+		+r(750)
+			margin-bottom: 13px
+			flex-wrap: nowrap
+			height: auto
+			align-items: center
 		.label_head
 			position: relative
 			margin: 0 15px 17px
+			+r(1024)
+				margin-right: 10px
+				margin-left: 10px
+			+r(750)
+				margin: 0
+				margin-bottom: 19px
+			&:last-child
+				+r(750)
+					margin-bottom: 0
 			&-city
 				margin-bottom: 3px
 			&-message	
@@ -79,6 +121,10 @@
 				background-color: $blue
 				box-sizing: border-box
 				outline: none
+				+r(1024)
+					width: 343px
+				+r(750)
+					width: 283px
 				&::placeholder
 					color: #fff
 					font-size: 16px
@@ -111,6 +157,8 @@
 	line-height: 42px
 	background-color: $red
 	box-sizing: border-box
+	+r(750)
+		width: 53px
 	&.active
 		display: block
 	&:before
@@ -135,5 +183,5 @@
 		line-height: 28px
 		border-radius: 50%
 		background-color: #f3746f
-
-
+		+r(750)
+			left: 15px

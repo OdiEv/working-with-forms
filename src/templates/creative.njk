@@ -6,15 +6,50 @@ title: Creative
 
 {% block content %}
   
-  {% set icons = [
-    {"numb": "1",
-     "name": "Customized reporting"
+  {% set socials = [
+    {"name": "instagram"},
+    {"name": "twitter"},
+    {"name": "adzuna"},
+    {"name": "bingads"},
+    {"name": "linkedin"},
+    {"name": "monster"},
+    {"name": "unbounce"},
+    {"name": "hubspot"},
+    {"name": "facebook"},
+    {"name": "indeed"},
+    {"name": "googleadwords"}
+  ]%}
+
+  {% set items = [
+    {"number": "1",
+     "name": "Understand",
+     "text": "We explore, we ask, we listen. And we couple what we learn with our experience to build up a real understanding of what´s needed."
     },
-    {"numb": "2",
-     "name": "Personal campaign reviews"
+    {"number": "2",
+     "name": "Engage",
+     "text": "We engage with people, making sure we're saying exactly the right thing to them in exactly the right way."
     },
-    {"numb": "3",
-     "name": "Agency managment"
+    {"number": "3",
+     "name": "Inspire",
+     "text": "Through great work, we inspire people to act. Whether that's to apply, to grow, to learn or to perform."
+    }
+  ]%}
+
+   {% set features = [
+    {"number": "1",
+     "name": "Marketing &amp; Strategy",
+     "text1": "We want your digital marketing to be as engaging and relevant as possible.",
+     "text2": "It doesn't matter if you're launching a new product or positioning your brand - our strategy remains the same. We conceive. We build. We get results. Simple and with confidence."
+    },
+    {"number": "2",
+     "name": "Social Influence",
+     "text1": "Social Media is central to the online customer experience for over 79% of Irish businesses.",
+     "text2": "It offers great way to interact with or to gain, an audience. Use it to build brand awareness, create positive sentiment and drive engagement. Not to mention watching some great cat videos and gifs...mow."
+    },
+    {"number": "3",
+     "name": "Search and channel marketing",
+     "text1": "Search powers the web. It's the largest provider of traffic there is.",
+     "text2": "The way it works has drastically changed. Our focus on organic SEO &amp; Adwords coupled with content an conversion rate optimisation is at the heart of every strategy we create. We drive relevante traffic to your site and then make sure it converts."
     }
   ]%}
 
@@ -47,39 +82,11 @@ title: Creative
             </div> 
           </div>
           <div class="banner-3-partners">
-            <a href="#" class="logo instagram">
-              <img src="img/partners/icon-instagram.png" alt="instagram" class="instagram-icon">
-            </a>
-            <a href="#" class="logo twitter">
-              <img src="img/partners/icon-twitter.png" alt="twitter" class="twitter-icon">
-            </a>
-            <a href="#" class="logo adzuna">
-              <img src="img/partners/icon-adzuna.png" alt="adzuna" class="adzuna-icon">
-            </a>
-            <a href="#" class="logo bingads">
-              <img src="img/partners/icon-bing.png" alt="bingads" class="bingads-icon">
-            </a>
-            <a href="#" class="logo linkedin">
-              <img src="img/partners/icon-linkedin.png" alt="linkedin" class="linkedin-icon">
-            </a>
-            <a href="#" class="logo monster">
-              <img src="img/partners/icon-monster.png" alt="monster" class="monster-icon">
-            </a>
-            <a href="#" class="logo unbounce">
-              <img src="img/partners/icon-unbounce.png" alt="unbounce" class="unbounce-icon">
-            </a>
-            <a href="#" class="logo hubspot">
-              <img src="img/partners/icon-hubspot.png" alt="hubspot" class="hubspot-icon">
-            </a>
-            <a href="#" class="logo facebook">
-              <img src="img/partners/icon-facebook.png" alt="facebook" class="facebook-icon">
-            </a>
-            <a href="#" class="logo indeed">
-              <img src="img/partners/icon-indeed.png" alt="indeed" class="indeed-icon">
-            </a>
-            <a href="#" class="logo googleadwords">
-              <img src="img/partners/icon-googleadwords.png" alt="googleadwords" class="googleadwords-icon">
-            </a>  
+            {% for social in socials %}
+              <a href="#" class="logo {{social.name}}">
+                <img src="img/partners/icon-{{social.name}}.png" alt={{social.name}} class="{{social.name}}-icon">
+              </a>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -125,18 +132,12 @@ title: Creative
     <section class="rainbow"  style="background-image: url('img/rainbow_bg.png');">
       <div class="container">
         <div class="flex">
-          <div class="rainbow-x rainbow-1">
-            <h2 class="h2">Understand</h2>
-            <p>We explore, we ask, we listen. And we couple what we learn with our experience to build up a real understanding of what´s needed.</p>
-          </div>
-          <div class="rainbow-x rainbow-2">
-            <h2 class="h2">Engage</h2>
-            <p>We engage with people, making sure we're saying exactly the right thing to them in exactly the right way.</p>
-          </div>
-          <div class="rainbow-x rainbow-3">
-            <h2 class="h2">Inspire</h2>
-            <p>Through great work, we inspire people to act. Whether that's to apply, to grow, to learn or to perform. </p>
-          </div>
+          {% for item in items %}
+            <div class="rainbow-x rainbow-{{item.number}}">
+              <h2 class="h2">{{item.name}}</h2>
+              <p>{{item.text}}</p>
+            </div>
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -151,30 +152,16 @@ title: Creative
     <section class="morecolumns">
       <div class="container">
         <div class="flex">
-          <div class="morecolumns__outer">
-            <div class="morecolumns__inner morecolumns-1">
-              <img src="img/morecol-1.png" alt="column-image" class="image image-1">
-              <h3 class="h3">Marketing &amp; Strategy</h3>
-              <p class="p1">We want your digital marketing to be as engaging and relevant as possible.</p>
-              <p class="p2">It doesn't matter if you're launching a new product or positioning your brand - our strategy remains the same. We conceive. We build. We get results. Simple and with confidence.</p>
+          {% for feature in features %}
+            <div class="morecolumns__outer">
+              <div class="morecolumns__inner morecolumns-{{feature.number}}">
+                <img src="img/morecol-{{feature.number}}.png" alt="column-image" class="image image-{{feature.number}}">
+                <h3 class="h3">{{feature.name}}</h3>
+                <p class="p1">{{feature.text1}}</p>
+                <p class="p2">{{feature.text2}}</p>
+              </div>
             </div>
-          </div>
-          <div class="morecolumns__outer">
-            <div class="morecolumns__inner morecolumns-2">
-              <img src="img/morecol-2.png" alt="column-image" class="image image-2">
-              <h3 class="h3">Social Influence</h3>
-              <p class="p1">Social Media is central to the online customer experience for over 79% of Irish businesses.</p>
-              <p class="p2">It offers great way to interact with or to gain, an audience. Use it to build brand awareness, create positive sentiment and drive engagement. Not to mention watching some great cat videos and gifs...mow.</p>
-            </div>
-          </div>
-          <div class="morecolumns__outer">
-            <div class="morecolumns__inner morecolumns-3">
-              <img src="img/morecol-3.png" alt="column-image" class="image image-3">
-              <h3 class="h3">Search and channel marketing</h3>
-              <p class="p1">Search powers the web. It's the largest provider of traffic there is.</p>
-              <p class="p2">The way it works has drastically changed. Our focus on organic SEO &amp; Adwords coupled with content an conversion rate optimisation is at the heart of every strategy we create. We drive relevante traffic to your site and then make sure it converts.</p>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </section>

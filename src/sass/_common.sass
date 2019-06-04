@@ -8,6 +8,10 @@ body
 	max-width: 1180px
 	margin: 0 auto
 	box-sizing: border-box
+	+r(1260)
+		padding: 0 19px
+	+r(750)
+		padding: 0 8px
 
 .flex
 	display: flex
@@ -18,10 +22,16 @@ a
 .h1
 	font-size: 72px
 	font-weight: 900
+	+r(992)
+		font-size: 60px
+	+r(480)
+		font-size: 38px
 
 .h2
 	font-size: 32px
 	font-weight: 700
+	+r(480)
+		font-size: 24px
 
 .h3
 	font-size: 24px
@@ -30,10 +40,14 @@ a
 .h4
 	font-size: 22px
 	font-weight: 500
+	+r(480)
+		font-size: 18px
 
 .h5
 	font-size: 48px
 	font-weight: 600
+	+r(750)
+		font-size: 30px
 
 .btn
 	display: block
@@ -71,6 +85,8 @@ a
 		transition: color 0.3s ease
 		cursor: pointer
 		outline: none
+		+r(750)
+			padding: 12px 78.5px 11px 79px
 		&:hover
 			background-color: $red
 			color: #fff
@@ -80,6 +96,10 @@ a
 			color: #fff
 			background-color: $blue
 			transition: background-color 0.3s ease
+			+r(750)
+				padding: 16px 141px 17px 150px
+			+r(480)
+				padding: 16px 85px 17px 84px
 			&:hover
 				background-color: $red
 	&-creative
@@ -96,6 +116,8 @@ a
 		cursor: pointer
 		outline: none
 		transition: color 0.3s ease
+		+r(480)
+			padding: 14px 26px 13px 16px
 		&:hover
 			color: $blue
 
@@ -119,6 +141,8 @@ a
 	transition: opacity 0.4s ease
 	transition: box-shadow 0.4s ease
 	transition: color 0.4s ease
+	+r(480)
+		display: none
 	&.active
 		right: 30px
 	&:hover

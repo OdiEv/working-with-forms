@@ -10,30 +10,75 @@
 		background: url('../img/creative_bg.png') no-repeat 85% 50%
 		background-size: cover
 		color: $blue
+		+r(992)
+			padding-top: 55px
+			padding-bottom: 38px
+			background-image: url('../img/creative_bg_768.png')
+			background-position: 60% 50%
+		+r(750)
+			padding-top: 283px
+			padding-bottom: 32px
+			background-image: url('../img/creative_bg_320.png') 
+			background-position: 50% 5%
+		+r(480)
+			padding-top: 343px
+			background-position: 50% 0%
 	&-info
 		max-width: 590px
 		padding-left: 24px
 		box-sizing: border-box
+		+r(1024)
+			max-width: 500px
+		+r(992)
+			max-width: 470px
+			padding-left: 8px
+		+r(750)
+			max-width: 100%
+		+r(480)
+			padding: 0 4px
 		.p1
 			margin-bottom: 13px
 			font-size: 22px
 			font-weight: 900
 			text-transform: uppercase
 			color: $red_a
+			+r(480)
+				margin-bottom: 11px
+				font-size: 20px
 		.p2
 			margin-bottom: 25px
 			font-size: 38px
 			line-height: 41px
 			font-weight: 900
+			+r(992)
+				margin-bottom: 14px
+			+r(480)
+				margin-bottom: 9px
+				font-size: 25px
+				line-height: 28px
 		.p3
 			margin-bottom: 38px
 			font-size: 16px
 			line-height: 24px
 			font-weight: 500
+			+r(992)
+				padding-right: 55px
+				margin-bottom: 25px
+			+r(480)
+				margin-bottom: 16px
+				padding-right: 5px
+				line-height: 23px
 	&-quote
 		position: relative
 		margin-left: 24px
 		max-width: 562px
+		+r(992)
+			margin-left: 8px
+		+r(750)
+			margin-left: 12px
+			margin-right: 25px
+		+r(480)
+			margin-right: 12px
 		&:before
 			display: none
 			content: ''
@@ -43,6 +88,8 @@
 			transform: translateX(-50%)
 			border: 16px solid transparent
 			border-bottom: 16px solid $quote_bg
+			+r(480)
+				display: block
 		&:after
 			content: ''
 			position: absolute
@@ -51,22 +98,30 @@
 			transform: translateY(-50%)
 			border: 15px solid transparent
 			border-left: 15px solid $quote_bg
+			+r(480)
+				display: none
 		&-inner
 			position: relative
 			padding: 18px 19px 17px 100px
 			background-color: $quote_bg
 			box-sizing: border-box
+			+r(480)
+				padding: 16px 17px 16px 78px
 			p
 				font-size: 15px
 				line-height: 18px
 				font-weight: 500
 				font-style: italic
+				+r(480)
+					font-size: 14px
 			.h6
 				margin-top: 6px
 				font-size: 12px
 				font-weight: 600
 				text-transform: uppercase
 				color: $red
+				+r(480)
+					margin-top: 7px
 			&:before
 				content: ''
 				width: 69px
@@ -76,54 +131,223 @@
 				top: 50%
 				transform: translateY(-50%)
 				background: url("../img/quote.png") no-repeat
+				+r(480)
+					width: 51px
+					height: 51px
+					top: 18px
+					left: 16px
+					transform: none
+					background: url("../img/quote_320.png") no-repeat
 	&-partners
 		position: absolute
 		top: -72px
 		right: 0
 		width: 430px
 		height: 375px
+		+r(992)
+			top: -55px
+		+r(750)
+			width: 316px
+			height: 283px
+			top: -283px
+			left: 50%
+			transform: translateX(-50%)
+		+r(480)
+			width: 306px
+			height: 225px
+			top: -343px
 		.logo
 			position: absolute
 		.instagram
 			top: 129px
 			right: 337px
+			+r(992)
+				top: 193px
+				right: 250px
+			+r(750)
+				top: 93px
+			+r(480)
+				top: 87px
+				left: 61px
+			&-icon
+				+r(992)
+					width: 28px
+				+r(480)
+					width: 21px
 		.twitter
 			top: 105px
 			right: 251px
+			+r(992)
+				top: 167px
+				right: 187px
+			+r(750)
+				top: 67px
+			+r(480)
+				top: 72px
+				left: 107px					
+			&-icon
+				+r(992)
+					width: 31px
+				+r(480)
+					width: 23px
 		.adzuna
 			top: 58px
 			right: 139px
+			+r(992)
+				top: 140px
+				right: 109px
+			+r(750)
+				top: 40px
+			+r(480)
+				top: 47px
+				left: 144px
+			&-icon
+				+r(992)
+					width: 60px
+				+r(480)
+					width: 45px
 		.bingads
 			top: 131px
 			right: 65px
+			+r(992)
+				top: 195px
+				right: 55px
+			+r(750)
+				top: 95px
+			+r(480)
+				top: 87px
+				left: 164px
+			&-icon
+				+r(992)
+					width: 88px
+				+r(480)
+					width: 65px
 		.linkedin
 			top: 182px
 			right: 204px
+			+r(992)
+				top: 231px
+				right: 155px
+			+r(750)
+				top: 131px
+			+r(480)
+				top: 115px
+				left: 94px
+			&-icon
+				+r(992)
+					width: 80px
+				+r(480)
+					width: 60px
 		.monster
 			top: 185px
 			right: 23px
+			+r(992)
+				top: 233px
+				right: 25px
+			+r(750)
+				top: 133px
+			+r(480)
+				top: 117px
+				left: 179px
+			&-icon
+				+r(992)
+					width: 97px
+				+r(480)
+					width: 73px
 		.unbounce
 			top: 209px
 			right: 348px
+			+r(992)
+				top: 250px
+				right: 257px
+			+r(750)
+				top: 150px
+			+r(480)
+				top: 130px
+				left: 36px
+			&-icon
+				+r(992)
+					width: 55px
+				+r(480)
+					width: 41px
 		.hubspot
 			top: 245px
 			right: 157px
+			+r(992)
+				top: 276px
+				right: 121px
+			+r(750)
+				top: 176px
+			+r(480)
+				top: 149px
+				left: 115px
+			&-icon
+				+r(992)
+					width: 86px
+				+r(480)
+					width: 65px
 		.facebook
 			top: 246px
 			right: 80px
+			+r(992)
+				top: 277px
+				right: 66px
+			+r(750)
+				top: 177px
+			+r(480)
+				top: 150px
+				left: 204px
+			&-icon
+				+r(992)
+					width: 22px
+				+r(480)
+					width: 17px
 		.indeed
 			top: 297px
 			right: 234px
+			+r(992)
+				top: 303px
+				right: 175px
+			+r(750)
+				top: 203px
+			+r(480)
+				top: 177px
+				left: 78px
+			&-icon
+				+r(992)
+					width: 81px
+				+r(480)
+					width: 61px
 		.googleadwords
 			top: 314px
 			right: 92px
+			+r(992)
+				top: 326px
+				right: 74px
+			+r(750)
+				top: 226px
+			+r(480)
+				top: 187px
+				left: 151px
+			&-icon
+				+r(992)
+					width: 85px
+				+r(480)
+					width: 65px
 
 .phrase
 	&__creative
 		padding-top: 53px
 		padding-bottom: 67px
+		+r(768)
+			padding-top: 58px
+		+r(480)
+			padding-top: 39px
+			padding-bottom: 42px
 		.h2
 			margin-bottom: 28px
+			+r(480)
+				margin-bottom: 15px
 	.flex
 		justify-content: center
 		.input
@@ -137,6 +361,8 @@
 			background-color: $red
 			box-sizing: border-box
 			outline: none
+			+r(480)
+				width: 100%
 			&::placeholder
 				color: #fff
 				font-size: 16px
@@ -152,40 +378,75 @@
 		text-align: center
 		background: url('../img/phrase_question.png') no-repeat center bottom
 		background-size: cover
+		+r(768)
+			padding-top: 68px
+			padding-bottom: 398px
+			background-image: url('../img/phrase_question-2.png')
+		+r(480)
+			padding-top: 45px
+			padding-bottom: 194px
+			background-image: url('../img/phrase_question-3.png')
 		.container
 			max-width: 800px
 		.h2
 			margin-bottom: 11px
 			color: $red
+			+r(480)
+				font-size: 27px
+				line-height: 27px
 		p
 			font-size: 18px
 			font-weight: 500
 			line-height: 27px
 			color: #41464f
+			+r(480)
+				font-size: 17px
+				line-height: 24px
 
 .conversion
 	padding-top: 95px
 	padding-bottom: 112px
 	text-align: center
+	+r(992)
+		padding-top: 86px
+		padding-bottom: 76px
+	+r(650)
+		padding-top: 59px
+		padding-bottom: 35px
 	.h2
 		margin-bottom: 18px
 		line-height: 32px
 		color: $blue
 		text-transform: uppercase
+		+r(992)
+			margin-bottom: 7px
+			font-size: 27px
+		+r(650)
+			margin-bottom: 11px
 	p
 		max-width: 1000px
 		margin: 0 auto
 		font-size: 17px
 		line-height: 25px
 		color: $blue
+		+r(650)
+			font-size: 16px
+			line-height: 24px
 	.flex
 		position: relative
 		margin-top: 35px
 		justify-content: center
+		+r(992)
+			margin-top: 31px
+		+r(650)
+			margin-top: 11px
 	&-image
 		padding-top: 26px
 		padding-bottom: 20px
 		box-sizing: border-box
+		+r(650)
+			padding-top: 10px
+			padding-bottom: 27px
 		&-text
 			width: 115px
 			height: 51px
@@ -200,6 +461,14 @@
 			color: $blue
 			text-transform: uppercase
 			background-color: #fff
+			+r(650)
+				top: 47px
+		.image-1
+			+r(650)
+				width: 86px
+		.image-2
+			+r(650)
+				width: 85px
 	&-red
 		padding-right: 83px
 		border-right: 2px dashed $blue
@@ -210,6 +479,10 @@
 	padding: 86px 41px 96px
 	background: no-repeat center
 	background-size: cover
+	+r(992)
+		padding: 37px 41px 49px
+	+r(480)
+		padding: 29px 14px 30px
 	.container
 		max-width: 1290px
 		padding: 0
@@ -218,13 +491,30 @@
 		text-align: center
 		max-width: 430px
 		box-sizing: border-box
+		+r(992)
+			max-width: 100%
+			padding: 47px 0
+		+r(480)
+			padding: 39px 0 42px
 		.h2
 			margin-bottom: 22px
 			text-transform: uppercase
+			+r(480)
+				margin-bottom: 10px
+				font-size: 27px
 		p
 			font-size: 18px
 			font-weight: 500
 			line-height: 23px
+			+r(1260)
+				padding: 0
+			+r(992)
+				padding: 0 100px
+			+r(750)
+				padding: 0 20px
+			+r(480)
+				font-size: 17px
+				line-height: 21px
 	&-1
 		background-color: $red
 		p
@@ -237,16 +527,28 @@
 		background-color: $blue
 		p
 			padding: 0 60px
+	.flex
+		+r(992)
+			flex-direction: column
 
 .morecolumns
 	padding-top: 141px
 	padding-bottom: 65px
 	background-color: $grey
+	+r(992)
+		padding-top: 63px
+		padding-bottom: 42px
+	+r(480)
+		padding-top: 31px
+		padding-bottom: 30px
 	.container
 		max-width: 1320px
 		padding: 0 10px
 	.flex
 		justify-content: space-between
+		+r(992)
+			flex-direction: column
+			align-items: center
 	&__outer
 		max-width: 408px
 		margin: 0 5px
@@ -254,6 +556,14 @@
 		background:  url('../img/rainbow_bg.png') no-repeat center
 		background-size: cover
 		box-sizing: border-box
+		+r(992)
+			max-width: 688px
+			margin-bottom: 30px
+		+r(480)
+			margin-bottom: 12px
+		&:last-child
+			+r(992)
+				margin-bottom: 0
 	&__inner
 		position: relative
 		height: 100%
@@ -261,16 +571,49 @@
 		padding-bottom: 33px
 		background-color: $grey
 		box-sizing: border-box
+		+r(992)
+			padding: 42px 20px 36px 224px
+		+r(650)
+			padding: 32px 10px 28px 184px
+		+r(480)
+			padding: 120px 17px 22px
 		.image
 			position: absolute
 			left: 50%
 			transform: translateX(-50%)
+			+r(992)
+				top: 46px
+				transform: none
+			+r(650)
+				top: 36px
+			+r(480)
+				top: 23px
+				left: 50%
+				transform: translateX(-50%)
 			&-1
 				top: 45px
+				+r(992)
+					left: 40px
+				+r(650)
+					left: 15px
+				+r(480)
+					width: 89px
 			&-2
 				top: 59px
+				+r(992)
+					left: 50px
+				+r(650)
+					left: 25px
+				+r(480)
+					width: 93px
 			&-3
 				top: 60px
+				+r(992)
+					left: 48px
+				+r(650)
+					left: 28px
+				+r(480)
+					width: 83px
 		.h3
 			margin-bottom: 22px
 			font-size: 26px
@@ -278,15 +621,28 @@
 			text-transform: uppercase
 			text-align: center
 			color: $blue
+			+r(992)
+				text-align: left
+				margin-bottom: 10px
+			+r(480)
+				margin-bottom: 7px
+				text-align: center
 		p
 			padding-left: 35px
 			padding-right: 25px
 			font-size: 16px
 			line-height: 23px
+			+r(1260)
+				padding-left: 15px
+				padding-right: 10px
+			+r(992)
+				padding: 0
 		.p1
 			margin-bottom: 10px
 			font-weight: 500
 			color: $blue_light
+			+r(480)
+				margin-bottom: 7px
 		.p2
 			color: $blue
 	&-3
@@ -298,14 +654,25 @@
 	padding-bottom: 103px
 	text-align: center
 	background-color: $grey
+	+r(992)
+		padding-top: 46px
+		padding-bottom: 68px
+	+r(480)
+		padding-top: 31px
+		padding-bottom: 41px
 	.container
 		max-width: 686px
 		padding: 0 13px
 	.h2
 		text-transform: uppercase
 		color: $blue
+		+r(480)
+			font-size: 24px
 	&-image
 		width: 100%
 		max-width: 830px
 		margin-top: 51px
-
+		+r(992)
+			margin-top: 34px
+		+r(480)
+			margin-top: 15px

@@ -2,40 +2,109 @@
 	padding-top: 18px
 	background: no-repeat center top
 	background-size: cover
+	+r(768)
+		position: relative
+	+r(480)
+		padding-top: 28px
 	&__top
 		padding: 51px 0
 		background-color: $red
+		+r(992)
+			padding-bottom: 46px
+		+r(480)
+			padding-top: 34px
+			padding-bottom: 36px
 		.flex
 			justify-content: space-around
+			+r(992)
+				flex-direction: column
+				align-items: center
 		.h2
 			line-height: 45px
 			text-transform: uppercase
+			+r(992)
+				margin-bottom: 30px
+			+r(768)
+				text-align: center
+			+r(480)
+				margin-bottom: 27px
+				font-size: 24px
+				line-height: 24px
 	&__bottom
 		margin-top: 13px
 		padding-top: 82px
 		padding-bottom: 86px
 		background-color: $blue
+		+r(992)
+			margin-top: 16px
+		+r(768)
+			padding-top: 43px
+		+r(480)
+			margin-top: 33px
 		.flex
 			justify-content: space-around
+			+r(768)
+				flex-direction: column
+				align-items: center
 	&__logo
+		+r(768)
+			margin-bottom: 28px
 		.rights
 			margin-top: 25px
+			+r(768)
+				position: absolute
+				bottom: 47px
+				margin: 0 auto
 			p
 				font-size: 12px
 				font-weight: 500
 				opacity: 0.3
+				+r(768)
+					opacity: 0.22
 	&__list
-		ul li 
-			line-height: 24px
-			a
-				font-size: 14px
-				font-weight: 500
-				color: #f0f0f0
-				transition: color 0.3s ease
-				&:hover
-					color: $red
+		+r(768)
+			width: 280px
+			margin-bottom: 20px
+		ul
+			+r(768)
+				text-align: center
+			li 
+				line-height: 24px
+				+r(768)
+					position: relative
+					display: inline-block
+					margin: 0 8px
+					line-height: 20px
+					&:nth-child(2), &:nth-child(5)
+						&:after, &:before
+							position: absolute
+							top: 8px
+							content: ''
+							background-color: #fff
+							width: 4px
+							height: 4px
+							border-radius: 50%
+						&:before
+							left: -12px
+						&:after
+							right: -12px
+				a
+					font-size: 14px
+					font-weight: 500
+					color: #f0f0f0
+					transition: color 0.3s ease
+					+r(768)
+						font-weight: 700
+						line-height: 20px
+						text-transform: uppercase
+					&:hover
+						color: $red
 	&__contacts
 		line-height: 23px
+		+r(768)
+			text-align: center
+			line-height: 19px
+			opacity: 0.5
 		p
 			font-size: 14px
 			font-weight: 500
@@ -50,10 +119,16 @@
 	&__social
 		display: inline-block
 		margin-top: 50px
+		+r(768)
+			margin-top: 18px
 		a
 			margin-right: 20px
 			&:last-child
 				margin-right: 0
 			.fa
 				font-size: 21px
+				+r(768)
+					opacity: 0.4
+					&:hover
+						opacity: 1
 

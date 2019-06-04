@@ -4,17 +4,36 @@
 	text-align: center
 	background: no-repeat center
 	background-size: cover
+	+r(768)
+		padding-top: 187px
+		padding-bottom: 171px
+	+r(480)
+		padding-top: 71px
+		padding-bottom: 76px
 	.h1
 		text-transform: uppercase
 		line-height: 64px
 		text-shadow: 0 0 50px $blue
 		z-index: 5
+		+r(768)
+			line-height: 54px
+		+r(480)
+			line-height: 36px
 
 .phrase
 	position: relative
 	padding: 74px 0
 	text-align: center
 	background-color: $red
+	&-1
+		+r(750)
+			padding: 50px 0
+		+r(480)
+			padding: 36px 0
+		.h1
+			+r(480)
+				margin-bottom: 22px
+				line-height: 24px
 	.h2
 		text-align: center
 		margin-bottom: 25px
@@ -40,6 +59,14 @@
 		padding-bottom: 332px
 		background: url('../img/phrase.png') no-repeat center bottom
 		background-size: cover
+		+r(768)
+			padding-top: 101px
+			padding-bottom: 266px
+			background-image: url('../img/phrase-2.png')
+		+r(480)
+			padding-top: 61px
+			padding-bottom: 212px
+			background-position: 70% bottom
 		.container
 			max-width: 615px
 		p
@@ -47,31 +74,72 @@
 			font-weight: 500
 			line-height: 27px
 			color: #000
+			+r(480)
+				padding: 0 10px
+				font-size: 16px
+				line-height: 25px
 
 .features
 	padding-top: 110px
 	padding-bottom: 136px
+	+r(992)
+		padding-top: 79px
+		padding-bottom: 92px
+	+r(750)
+		padding-top: 53px
+		padding-bottom: 72px
+	+r(480)
+		padding-top: 43px
+		padding-bottom: 47px
 	.h2
 		margin-bottom: 55px
 		color: $blue
 		text-transform: uppercase
 		text-align: center
+		+r(992)
+			margin-bottom: 43px
+		+r(750)
+			margin-bottom: 23px
+		+r(480)
+			font-size: 28px
 	.flex
 		justify-content: space-around
+		+r(750)
+			flex-direction: column
+			align-items: center
 	.feature
 		position: relative
 		max-width: 305px
 		padding-bottom: 45px
 		text-align: center
 		box-sizing: border-box
+		+r(992)
+			padding: 0 5px 45px
+		+r(750)
+			margin-bottom: 20px
+			padding-bottom: 30px
+		+r(480)
+			max-width: 405px
+			position: relative
+			padding: 0 0 35px 73px 
+			text-align: left
+		&:last-child
+			+r(750)
+				margin-bottom: 0
 		.h3
 			margin-top: 27px
 			margin-bottom: 10px
 			color: $red
 			text-transform: uppercase
+			+r(750)
+				margin-top: 12px
+			+r(480)
+				margin: 5px 0
 		p
 			color: $dark_blue
 			line-height: 20px
+			+r(480)
+				font-size: 15px
 		.viewmore
 			position: absolute
 			bottom: 0
@@ -85,6 +153,9 @@
 			white-space: nowrap
 			transition: border-bottom 0.3s ease
 			transition: color 0.3s ease
+			+r(480)
+				left: 71px
+				transform: none
 			&:hover
 				color: $red
 				border-bottom: 1px solid $red
@@ -95,20 +166,37 @@
 			height: 121px
 			background: url("../img/sprite1.png") no-repeat
 			box-sizing: border-box
+			+r(480)
+				position: absolute
+				top: 0
+				left: -8px
+				width: 80px
+				height: 80px
+				background-image: url("../img/sprite1_320.png")
 		&-1
 			&:before
 				background-position: 24px 0
+				+r(480)
+					background-position: 0 0
 		&-2
 			&:before
 				background-position: -122px 0
+				+r(480)
+					background-position: 0 -94px
 		&-3
 			&:before
 				background-position: -294px 0
+				+r(480)
+					background-position: 0 -180px
 
 .icons
 	padding: 51px 58px 50px 52px
 	background: no-repeat center
 	background-size: cover
+	+r(992)
+		padding: 51px 47px 51px 39px
+	+r(480)
+		padding: 35px 15px 37px 14px
 	.container
 		padding: 0 8px
 		&-icons
@@ -116,16 +204,34 @@
 			padding: 100px 15px 121px
 			background-color: $blue
 			text-align: center
+			+r(992)
+				padding: 64px 0 87px
+			+r(480)
+				padding: 28px 0 30px 
 	.h2
 		margin-bottom: 15px
 		text-transform: uppercase
 		font-weight: 600
+		+r(480)
+			margin-bottom: 13px
+			line-height: 26px
 	p
 		font-size: 17px
+		+r(480)
+			margin: 0
+			font-size: 15px
+			line-height: 18px
 	.flex
 		justify-content: space-evenly
+		+r(992)
+			flex-direction: column
 		&__out
 			margin-top: 70px
+			+r(992)
+				display: flex
+				justify-content: center
+			+r(480)
+				margin-top: 30px
 	.icon
 		position: relative
 		max-width: 250px
@@ -135,8 +241,18 @@
 		text-align: left
 		line-height: 24px
 		box-sizing: border-box
-		.h4
-			text-transform: uppercase
+		+r(992)
+			margin-bottom: 24px
+			max-width: 100%
+		+r(480)
+			height: 60px
+			margin-bottom: 32px
+			padding-left: 85px
+			padding-top: 8px
+			line-height: 21px
+		&:last-child
+			+r(992)
+				margin-bottom: 0
 		&:before
 			content: ''
 			display: inline-block
@@ -147,24 +263,46 @@
 			height: 75px
 			background: url("../img/sprite2.png") no-repeat
 			box-sizing: border-box
+			+r(480)
+				left: 15px
+				width: 60px
+				height: 60px
+				background-image: url("../img/sprite2_320.png")
 		&-1
 			&:before
 				background-position: 2px 0
+				+r(480)
+					background-position: 0 0
 		&-2
-			max-width: 340px
 			&:before
 				background-position: -92px 0
+				+r(480)
+					background-position: 0 -80px
 		&-3
 			&:before
 				background-position: -187px 0
+				+r(480)
+					background-position: 0 -158px
+		.h4
+			text-transform: uppercase
+		p
+			+r(992)
+				margin: 0 50px
 
 .partners
 	padding: 145px 0
 	color: $blue
 	text-align: center
+	+r(992)
+		padding: 95px 0 77px
+	+r(650)
+		padding: 47px 0
 	.h2
 		margin-bottom: 20px
 		text-transform: uppercase
+		+r(650)
+			font-size: 27px
+			line-height: 24px
 	p
 		font-size: 17px
 	.flex
@@ -172,12 +310,26 @@
 		margin: 32px auto 0
 		flex-wrap: wrap
 		justify-content: center
+		+r(992)
+			max-width: 615px
+		+r(650)
+			max-width: 300px
+			margin-top: 30px
 	.partner
 		position: relative
 		margin: 3px
 		height: 197px
 		background-color: $grey
 		transition: box-shadow 0.3s ease
+		+r(992)
+			width: 49%
+		+r(650)
+			width: 100%
+			margin: 0
+			margin-bottom: 12px
+		&:last-child
+			+r(650)
+				margin-bottom: 0
 		&:hover
 			box-shadow: 0 0 10px 1px $pink
 			.partner-image
