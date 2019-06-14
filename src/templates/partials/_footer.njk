@@ -1,3 +1,20 @@
+{% set socials = [
+  {"name": "fab fa-facebook-f"},
+  {"name": "fab fa-twitter"},
+  {"name": "fas fa-play"},
+  {"name": "fab fa-instagram"},
+  {"name": "fab fa-linkedin-in"}
+]%}
+
+{% set list = [
+  {"name": "About us"},
+  {"name": "Partnerships"},
+  {"name": "FAQ"},
+  {"name": "Thanks"},
+  {"name": "Privacy"},
+  {"name": "Terms"}
+]%}
+
 <footer class="footer" style="background-image: url('img/bg_footer.png');">
 	<div class="footer__top">
 		<div class="container flex">
@@ -19,24 +36,19 @@
 			</div>
 			<div class="footer__list">
 				<ul>
-					<li><a href="#">About us</a></li>
-					<li><a href="#">Partnerships</a></li>
-					<li><a href="#">FAQ</a></li>
-					<li><a href="#">Thanks</a></li>
-					<li><a href="#">Privacy</a></li>
-					<li><a href="#">Terms</a></li>
+					{% for i in list %}
+						<li><a href="#">{{i.name}}</a></li>
+					{% endfor %}
 				</ul>
 			</div>
 			<div class="footer__contacts">
 				<p>info@oraworldwides.com</p>    
-				<a href="tel:+351211306637">351 211 306 637</a>
+				<a class="footer__contacts-phone" href="tel:+351211306637">351 211 306 637</a>
 				<p>Schulstrasse 4, 32547 Bad Oyenhausen, GERMANY</p>
 				<div class="footer__social">
-					<a href="#"><i class="fa icon-facebook"></i></a>
-					<a href="#"><i class="fa icon-twitter"></i></a>
-					<a href="#"><i class="fa icon-play"></i></a>
-					<a href="#"><i class="fa icon-instagram"></i></a>
-					<a href="#"><i class="fa icon-linkedin"></i></a>
+					{% for icon in socials %}
+						<a href="#"><i class="footer__social-fa {{icon.name}}"></i></a>
+					{% endfor %}
 				</div>
 			</div>
 		</div>

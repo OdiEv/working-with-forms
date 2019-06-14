@@ -23,12 +23,12 @@ $(document).ready( function() {
       }
   });
 
-	var iconHamb = $('.bars');
-	var hambNav = $('.header__nav');
-  var navOverlay = $('.olnav');
-  var navHidden = $('.hdnav');
-	var closeHamb = $('.btncloseNav');
-  var body = $('body');
+	const iconHamb = $('.bars');
+	const hambNav = $('.header__nav');
+  const navOverlay = $('.olnav');
+  const navHidden = $('.hdnav');
+	const closeHamb = $('.btncloseNav');
+  const body = $('body');
 	
 	iconHamb.click( function() {
     navOverlay.fadeIn();
@@ -46,11 +46,11 @@ $(document).ready( function() {
     body.removeClass('header__body');
   });
 	
-	var iconEnv = $('.envelope');
-	var	envContact = $('.header__contact');
-  var contactOverlay = $('.olcontact');
-  var contactHidden = $('.hdcontact');
-	var closeEnv = $('.btncloseCont');
+	const iconEnv = $('.envelope');
+	const	envContact = $('.header__contact');
+  const contactOverlay = $('.olcontact');
+  const contactHidden = $('.hdcontact');
+	const closeEnv = $('.btncloseCont');
 
 	iconEnv.click( function() {
     contactOverlay.fadeIn();
@@ -68,244 +68,124 @@ $(document).ready( function() {
     envContact.removeClass('active');
   })
 
-  var nameReg = /^[A-Za-z]+$/;
-  var numberReg =  /^[0-9]+$/;
-  var emailReg = /^([\w-]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  const nameReg = /^[A-Za-z]+$/;
+  const numberReg = /^[0-9]+$/;
+  const emailReg = /^([\w-]+@([\w-]+\.)+[\w-]{2,4})?$/;
 	
  // ---------------HEADER FORM----------------
+  
+  const names = $('#name_head');
+  const telephone = $('#telephone_head');
+  const country = $('#country_head');
+  const city = $('#city_head');
+  const email = $('#email_head');
+  const message = $('#message_head');
 
-  $('.form_head').submit( function(formHead) {
-
-    if ($('.input_head').is('.active')) {
-
-      validateFormHead();
-
-        if ($('.input_head').is('.active')) {
-          validateFormHead();
-          formHead.preventDefault();
-        } else {
-          $.ajax().done( function () {
-            $('.header__thanks').delay(300).fadeIn();
-            $('.form_head').trigger('reset');
-            $('.header__thanks').delay(2500).fadeOut();
-            contactOverlay.delay(3500).fadeOut();
-            envContact.delay(3500).removeClass('active');
-            body.delay(3500).removeClass('header__body');
-          });
-          return false;
-        }
-
-    } else {
-      validateFormHead();
-      formHead.preventDefault();
-    }
-
-  });
+  const arrHead = [names, country, city, email, telephone, message];
 
   function validateFormHead() {
-
-    var names = $('#name_head').val();
-    var telephone = $('#telephone_head').val();
-    var country = $('#country_head').val();
-    var city = $('#city_head').val();
-    var email = $('#email_head').val();
-    var message = $('#message_head').val();
-
-    var inputVal = [names, telephone, country, city, email, message];
-    
-      if (inputVal[0] == "") {
-        $('#name_head').addClass('active');
-        $('.label_head-name .error').addClass('active');
-      } else if (!nameReg.test(names)) {
-        $('#name_head').addClass('active');
-        $('.label_head-name .error').addClass('active');
+    arrHead.forEach((item, i, arr) => {
+      if (item.val() == "") {
+        item.addClass('active');
+        item.next().addClass('active');
+      } else if ( i < 3 && !nameReg.test(item.val()) ||
+                  i == 3 && !emailReg.test(arr[3].val()) ||
+                  i == 4 && !numberReg.test(arr[4].val())
+        ) {
+        item.addClass('active');
+        item.next().addClass('active');
       } else {
-        $('#name_head').removeClass('active');
-        $('.label_head-name .error').removeClass('active');
+        item.removeClass('active');
+        item.next().removeClass('active');
       }
-
-      if (inputVal[1] == "") {
-        $('#telephone_head').addClass('active');
-        $('.label_head-telephone .error').addClass('active');
-      } else if (!numberReg.test(telephone)){
-        $('#telephone_head').addClass('active');
-        $('.label_head-telephone .error').addClass('active');
-      } else {
-        $('#telephone_head').removeClass('active');
-        $('.label_head-telephone .error').removeClass('active');
-      }
-
-      if (inputVal[2] == "") {
-        $('#country_head').addClass('active');
-        $('.label_head-country .error').addClass('active');
-      } else if (!nameReg.test(country)) {
-        $('#country_head').addClass('active');
-        $('.label_head-country .error').addClass('active');
-      } else {
-        $('#country_head').removeClass('active');
-        $('.label_head-country .error').removeClass('active');
-      }
-      
-      if (inputVal[3] == "") {
-        $('#city_head').addClass('active');
-        $('.label_head-city .error').addClass('active');
-      } else if (!nameReg.test(city)) {
-        $('#city_head').addClass('active');
-        $('.label_head-city .error').addClass('active');
-      } else {
-        $('#city_head').removeClass('active');
-        $('.label_head-city .error').removeClass('active');
-      }  
-
-      if (inputVal[4] == "") {
-        $('#email_head').addClass('active');
-        $('.label_head-email .error').addClass('active');
-      } else if (!emailReg.test(email)) {
-        $('#email_head').addClass('active');
-        $('.label_head-email .error').addClass('active');
-      } else {
-        $('#email_head').removeClass('active');
-        $('.label_head-email .error').removeClass('active');
-      }
-
-      if (inputVal[5] == "") {
-        $('#message_head').addClass('active');
-      } else {
-        $('#message_head').removeClass('active');
-      }
-
+    });
   }
+
+  const formHead = $('.form_head');
+  const inputHead = $('.input_head');
+  const thanksHead = $('.header__thanks');
+
+  formHead.submit( e => {
+    e.preventDefault();
+    validateFormHead();
+    if (!inputHead.is('.active')) {
+      $.ajax().done(function() {
+        thanksHead.delay(300).fadeIn();
+        formHead.trigger('reset');
+        thanksHead.delay(2500).fadeOut();
+        contactOverlay.delay(3500).fadeOut();
+        envContact.delay(3500).removeClass('active');
+        body.delay(3500).removeClass('header__body');
+      });
+      return false;
+    }
+  });
 
 // --------------CONTACT PAGE FORM-----------------
 
-  $('.form_cont').submit( function(formCont) {
+  const namesC = $('#name_cont');
+  const telephoneC = $('#telephone_cont');
+  const companyC = $('#company_cont');
+  const countryC = $('#country_cont');
+  const cityC = $('#city_cont');
+  const emailC = $('#email_cont');
+  const messageC = $('#message_cont');
 
-    if ($('.input_cont').is('.active')) {
-      validateFormCont();
-
-        if ($('.input_cont').is('.active')) {
-          validateFormCont();
-          formCont.preventDefault();
-        } else {
-          $.ajax().done( function () {
-            $('.header__thanks').delay(300).fadeIn();
-            $('.form_cont').trigger('reset');
-            $('.header__thanks').delay(2500).fadeOut();
-            contactOverlay.delay(3500).fadeOut();
-            envContact.delay(3500).removeClass('active');
-            body.delay(3500).removeClass('header__body')
-          });
-          return false;
-        }
-
-    } else {
-      validateFormCont();
-      formCont.preventDefault();
-    }
-
-  });
+  const arrCont = [namesC, companyC, countryC, cityC, emailC, telephoneC, messageC];
 
   function validateFormCont() {
-
-    var namesC = $('#name_cont').val();
-    var telephoneC = $('#telephone_cont').val();
-    var companyC = $('#company_cont').val();
-    var countryC = $('#country_cont').val();
-    var cityC = $('#city_cont').val();
-    var emailC = $('#email_cont').val();
-    var messageC = $('#message_cont').val();
-
-    var inputValCont = [namesC, telephoneC, companyC, countryC, cityC, emailC, messageC];
-    
-    if (inputValCont[0] == "") {
-      $('#name_cont').addClass('active');
-      $('.label_cont-name .error').addClass('active');
-    } else if (!nameReg.test(namesC)) {
-      $('#name_cont').addClass('active');
-      $('.label_cont-name .error').addClass('active');
-    } else {
-      $('#name_cont').removeClass('active');
-      $('.label_cont-name .error').removeClass('active');
-    }
-
-    if (inputValCont[1] == "") {
-      $('#telephone_cont').addClass('active');
-      $('.label_cont-telephone .error').addClass('active');
-    } else if (!numberReg.test(telephoneC)){
-      $('#telephone_cont').addClass('active');
-      $('.label_cont-telephone .error').addClass('active');
-    } else {
-      $('#telephone_cont').removeClass('active');
-      $('.label_cont-telephone .error').removeClass('active');
-    }
-
-    if (inputValCont[2] == "") {
-      $('#company_cont').addClass('active');
-      $('.label_cont-company .error').addClass('active');
-    } else if (!nameReg.test(companyC)) {
-      $('#company_cont').addClass('active');
-      $('.label_cont-company .error').addClass('active');
-    } else {
-      $('#company_cont').removeClass('active');
-      $('.label_cont-company .error').removeClass('active');
-    }
-
-    if (inputValCont[3] == "") {
-      $('#country_cont').addClass('active');
-      $('.label_cont-country .error').addClass('active');
-    } else if (!nameReg.test(countryC)) {
-      $('#country_cont').addClass('active');
-      $('.label_cont-country .error').addClass('active');
-    } else {
-      $('#country_cont').removeClass('active');
-      $('.label_cont-country .error').removeClass('active');
-    }
-    
-    if (inputValCont[4] == "") {
-      $('#city_cont').addClass('active');
-      $('.label_cont-city .error').addClass('active');
-    } else if (!nameReg.test(cityC)) {
-      $('#city_cont').addClass('active');
-      $('.label_cont-city .error').addClass('active');
-    } else {
-      $('#city_cont').removeClass('active');
-      $('.label_cont-city .error').removeClass('active');
-    }
-
-    if (inputValCont[5] == "") {
-      $('#email_cont').addClass('active');
-      $('.label_cont-email .error').addClass('active');
-    } else if (!emailReg.test(emailC)) {
-      $('#email_cont').addClass('active');
-      $('.label_cont-email .error').addClass('active');
-    } else {
-      $('#email_cont').removeClass('active');
-      $('.label_cont-email .error').removeClass('active');
-    }
-
-    if (inputValCont[6] == "") {
-      $('#message_cont').addClass('active');
-    } else {
-      $('#message_cont').removeClass('active');
-    }
-
+     arrCont.forEach((item, i, arr) => {
+      if (item.val() == "") {
+        item.addClass('active');
+        item.next().addClass('active');
+      } else if ( i < 4 && !nameReg.test(item.val()) ||
+                  i == 4 && !emailReg.test(arr[3].val()) ||
+                  i == 5 && !numberReg.test(arr[4].val())
+        ) {
+        item.addClass('active');
+        item.next().addClass('active');
+      } else {
+        item.removeClass('active');
+        item.next().removeClass('active');
+      }
+    });
   }
 
-// --------------------------------------------------
+  const formCont = $('.form_cont');
+  const inputCont = $('.input_cont');
 
+  formCont.submit( e => {
+    e.preventDefault();
+    validateFormCont();
+    if (!inputCont.is('.active')) {
+      $.ajax().done(function() {
+        thanksHead.delay(300).fadeIn();
+        formCont.trigger('reset');
+        thanksHead.delay(2500).fadeOut();
+        contactOverlay.delay(3500).fadeOut();
+        envContact.delay(3500).removeClass('active');
+        body.delay(3500).removeClass('header__body')
+      });
+      return false;
+    }
+  });
+
+// --------------------------------------------------
+  
+  const errorMessage = $('.error__text');
   $(window).resize(function() {
     if($(window).width() < 750) {
-      $('.error').empty();
+      errorMessage.css('display', 'none');
     } else if ($(window).width() > 750) {
-      $('.error').text("Error message");
+      errorMessage.css('display', 'block');
     }
   });
 
   $(window).is(function() {
     if($(window).width() < 750) {
-      $('.error').empty();
+      errorMessage.css('display', 'none');
     } else if ($(window).width() > 750) {
-      $('.error').text("Error message");
+      errorMessage.css('display', 'block');
     }
   });
 

@@ -2,17 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Main</title>
+    <title>Analytics</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#fff">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" media="all" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,900" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <script src="js/vendors/picturefill.min.js"></script>
   </head>
   <body>
-    <noscript>Your browser does not support JavaScript! Please turn on JavaScript</noscript>
 
     <!-- BEGIN content -->
     <div class="out">
@@ -20,7 +20,7 @@
       <header class="header">
         <div class="container flex">
           <div class="header__menu">
-            <i class="icon-menu bars"></i>
+            <i class="bars fas fa-bars"></i>
           </div>
           <div class="header__logo">
             <a href="index.html" class="logo">
@@ -28,14 +28,15 @@
             </a>
           </div>
           <div class="header__envelope">
-            <i class="icon-mail envelope"></i>
+            <i class="envelope far fa-envelope"></i>
           </div>
         </div>
+
         <div class="header__overlay olnav">
           <div class="header__hidden hdnav"></div>
           <div class="header__nav">
             <div class="btncloseNav"></div>
-            <nav class="header__nav-list">
+            <nav class="header__list">
               <ul>
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Partnerships</a></li>
@@ -45,14 +46,14 @@
                 <li><a href="#">Terms</a></li>
               </ul>
             </nav>
-            <div class="header__nav-social">
-              <a href="#"><i class="icon-facebook"></i></a>
-              <a href="#"><i class="icon-twitter"></i></a>
-              <a href="#"><i class="icon-play"></i></a>
-              <a href="#"><i class="icon-instagram"></i></a>
-              <a href="#"><i class="icon-linkedin"></i></a>
+            <div class="header__social">
+              <a href="#"><i class="header__social-fa fab fa-facebook-f"></i></a>
+              <a href="#"><i class="header__social-fa fab fa-twitter"></i></a>
+              <a href="#"><i class="header__social-fa fas fa-play"></i></a>
+              <a href="#"><i class="header__social-fa fab fa-instagram"></i></a>
+              <a href="#"><i class="header__social-fa fab fa-linkedin-in"></i></a>
             </div>
-            <div class="header__nav-contacts">
+            <div class="header__contacts">
               <p>info@oraworldwides.com</p>
               <a href="tel:+351211306637">351 211 306 637</a>
               <p>Schulstrasse 4, 32547 Bad Oyenhausen, GERMANY</p>
@@ -60,9 +61,13 @@
           </div>
         </div>
         <div class="header__overlay olcontact">
+
           <div class="header__hidden hdcontact"></div>
+
           <div class="header__contact">
+
             <div class="btncloseCont"></div>
+
             <div class="container">
               <div class="header__contact-info">
                 <div class="header__contact-head">
@@ -75,34 +80,44 @@
                 </div>
                 <form class="form_head">
                   <div class="flex">
+
                     <label for="name_head" class="label_head label_head-name">
                       <input type="text" id="name_head" name="name_head" placeholder="Your name" class="input_head">
-                      <span class="error">Error message</span>
+                      <span class="error"><span class="error__text">Enter your name</span></span>
                     </label>
+
                     <label for="telephone_head" class="label_head label_head-telephone">
                       <input type="text" id="telephone_head" name="telephone_head" placeholder="Telephone number" class="input_head">
-                      <span class="error">Error message</span>
+                      <span class="error"><span class="error__text">Enter your phone number</span></span>
                     </label>
+
                     <label for="country_head" class="label_head label_head-country">
                       <input type="text" id="country_head" name="country_head" placeholder="Country" class=" input_head">
-                      <span class="error">Error message</span>
+                      <span class="error"><span class="error__text">Enter your country</span></span>
                     </label>
+
                     <label for="city_head" class="label_head label_head-city">
                       <input type="text" id="city_head" name="city_head" placeholder="City" class="input_head">
-                      <span class="error">Error message</span>
+                      <span class="error"><span class="error__text">Enter your city</span></span>
                     </label>
+
                     <label for="email_head" class="label_head  label_head-email">
                       <input type="text" id="email_head" name="email_head" placeholder="Email Address" class="input_head">
-                      <span class="error">Error message</span>
+                      <span class="error"><span class="error__text">Enter your email</span></span>
                     </label>
+
                     <label for="message_head" class="label_head label_head-message">
                       <textarea name="message_head" id="message_head" placeholder="Your Message" class="input_head textarea_head"></textarea>
                     </label>
+
                   </div>
+
                   <button type="submit" class="btn_form">
                     Send Message
                   </button>
+
                 </form>
+
               </div>
             </div>
           </div>
@@ -360,14 +375,14 @@
             </div>
             <div class="footer__contacts">
               <p>info@oraworldwides.com</p>
-              <a href="tel:+351211306637">351 211 306 637</a>
+              <a class="footer__contacts-phone" href="tel:+351211306637">351 211 306 637</a>
               <p>Schulstrasse 4, 32547 Bad Oyenhausen, GERMANY</p>
               <div class="footer__social">
-                <a href="#"><i class="fa icon-facebook"></i></a>
-                <a href="#"><i class="fa icon-twitter"></i></a>
-                <a href="#"><i class="fa icon-play"></i></a>
-                <a href="#"><i class="fa icon-instagram"></i></a>
-                <a href="#"><i class="fa icon-linkedin"></i></a>
+                <a href="#"><i class="footer__social-fa fab fa-facebook-f"></i></a>
+                <a href="#"><i class="footer__social-fa fab fa-twitter"></i></a>
+                <a href="#"><i class="footer__social-fa fas fa-play"></i></a>
+                <a href="#"><i class="footer__social-fa fab fa-instagram"></i></a>
+                <a href="#"><i class="footer__social-fa fab fa-linkedin-in"></i></a>
               </div>
             </div>
           </div>
@@ -376,7 +391,7 @@
       <div class="fixed-menu">
         <div class="container flex">
           <div class="header__menu">
-            <i class="icon-menu bars"></i>
+            <i class="bars fas fa-bars"></i>
           </div>
           <div class="header__logo-fixed">
             <a href="index.html" class="logo-fixed">
@@ -384,12 +399,12 @@
             </a>
           </div>
           <div class="header__envelope">
-            <i class="icon-mail envelope"></i>
+            <i class="envelope far fa-envelope"></i>
           </div>
         </div>
       </div>
       <div class="scroll_top" title="Move Up">
-        <i class="icon-angle-double-up"></i>
+        <i class="fas fa-angle-double-up"></i>
       </div>
     </div>
     <!-- END content -->

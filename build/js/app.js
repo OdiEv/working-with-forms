@@ -149,232 +149,112 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
   // ---------------HEADER FORM----------------
 
-  (0, _jquery2.default)('.form_head').submit(function (formHead) {
+  var names = (0, _jquery2.default)('#name_head');
+  var telephone = (0, _jquery2.default)('#telephone_head');
+  var country = (0, _jquery2.default)('#country_head');
+  var city = (0, _jquery2.default)('#city_head');
+  var email = (0, _jquery2.default)('#email_head');
+  var message = (0, _jquery2.default)('#message_head');
 
-    if ((0, _jquery2.default)('.input_head').is('.active')) {
-
-      validateFormHead();
-
-      if ((0, _jquery2.default)('.input_head').is('.active')) {
-        validateFormHead();
-        formHead.preventDefault();
-      } else {
-        _jquery2.default.ajax().done(function () {
-          (0, _jquery2.default)('.header__thanks').delay(300).fadeIn();
-          (0, _jquery2.default)('.form_head').trigger('reset');
-          (0, _jquery2.default)('.header__thanks').delay(2500).fadeOut();
-          contactOverlay.delay(3500).fadeOut();
-          envContact.delay(3500).removeClass('active');
-          body.delay(3500).removeClass('header__body');
-        });
-        return false;
-      }
-    } else {
-      validateFormHead();
-      formHead.preventDefault();
-    }
-  });
+  var arrHead = [names, country, city, email, telephone, message];
 
   function validateFormHead() {
-
-    var names = (0, _jquery2.default)('#name_head').val();
-    var telephone = (0, _jquery2.default)('#telephone_head').val();
-    var country = (0, _jquery2.default)('#country_head').val();
-    var city = (0, _jquery2.default)('#city_head').val();
-    var email = (0, _jquery2.default)('#email_head').val();
-    var message = (0, _jquery2.default)('#message_head').val();
-
-    var inputVal = [names, telephone, country, city, email, message];
-
-    if (inputVal[0] == "") {
-      (0, _jquery2.default)('#name_head').addClass('active');
-      (0, _jquery2.default)('.label_head-name .error').addClass('active');
-    } else if (!nameReg.test(names)) {
-      (0, _jquery2.default)('#name_head').addClass('active');
-      (0, _jquery2.default)('.label_head-name .error').addClass('active');
-    } else {
-      (0, _jquery2.default)('#name_head').removeClass('active');
-      (0, _jquery2.default)('.label_head-name .error').removeClass('active');
-    }
-
-    if (inputVal[1] == "") {
-      (0, _jquery2.default)('#telephone_head').addClass('active');
-      (0, _jquery2.default)('.label_head-telephone .error').addClass('active');
-    } else if (!numberReg.test(telephone)) {
-      (0, _jquery2.default)('#telephone_head').addClass('active');
-      (0, _jquery2.default)('.label_head-telephone .error').addClass('active');
-    } else {
-      (0, _jquery2.default)('#telephone_head').removeClass('active');
-      (0, _jquery2.default)('.label_head-telephone .error').removeClass('active');
-    }
-
-    if (inputVal[2] == "") {
-      (0, _jquery2.default)('#country_head').addClass('active');
-      (0, _jquery2.default)('.label_head-country .error').addClass('active');
-    } else if (!nameReg.test(country)) {
-      (0, _jquery2.default)('#country_head').addClass('active');
-      (0, _jquery2.default)('.label_head-country .error').addClass('active');
-    } else {
-      (0, _jquery2.default)('#country_head').removeClass('active');
-      (0, _jquery2.default)('.label_head-country .error').removeClass('active');
-    }
-
-    if (inputVal[3] == "") {
-      (0, _jquery2.default)('#city_head').addClass('active');
-      (0, _jquery2.default)('.label_head-city .error').addClass('active');
-    } else if (!nameReg.test(city)) {
-      (0, _jquery2.default)('#city_head').addClass('active');
-      (0, _jquery2.default)('.label_head-city .error').addClass('active');
-    } else {
-      (0, _jquery2.default)('#city_head').removeClass('active');
-      (0, _jquery2.default)('.label_head-city .error').removeClass('active');
-    }
-
-    if (inputVal[4] == "") {
-      (0, _jquery2.default)('#email_head').addClass('active');
-      (0, _jquery2.default)('.label_head-email .error').addClass('active');
-    } else if (!emailReg.test(email)) {
-      (0, _jquery2.default)('#email_head').addClass('active');
-      (0, _jquery2.default)('.label_head-email .error').addClass('active');
-    } else {
-      (0, _jquery2.default)('#email_head').removeClass('active');
-      (0, _jquery2.default)('.label_head-email .error').removeClass('active');
-    }
-
-    if (inputVal[5] == "") {
-      (0, _jquery2.default)('#message_head').addClass('active');
-    } else {
-      (0, _jquery2.default)('#message_head').removeClass('active');
-    }
+    arrHead.forEach(function (item, i, arr) {
+      if (item.val() == "") {
+        item.addClass('active');
+        item.next().addClass('active');
+      } else if (i < 3 && !nameReg.test(item.val()) || i == 3 && !emailReg.test(arr[3].val()) || i == 4 && !numberReg.test(arr[4].val())) {
+        item.addClass('active');
+        item.next().addClass('active');
+      } else {
+        item.removeClass('active');
+        item.next().removeClass('active');
+      }
+    });
   }
+
+  var formHead = (0, _jquery2.default)('.form_head');
+  var inputHead = (0, _jquery2.default)('.input_head');
+  var thanksHead = (0, _jquery2.default)('.header__thanks');
+
+  formHead.submit(function (e) {
+    e.preventDefault();
+    validateFormHead();
+    if (!inputHead.is('.active')) {
+      _jquery2.default.ajax().done(function () {
+        thanksHead.delay(300).fadeIn();
+        formHead.trigger('reset');
+        thanksHead.delay(2500).fadeOut();
+        contactOverlay.delay(3500).fadeOut();
+        envContact.delay(3500).removeClass('active');
+        body.delay(3500).removeClass('header__body');
+      });
+      return false;
+    }
+  });
 
   // --------------CONTACT PAGE FORM-----------------
 
-  (0, _jquery2.default)('.form_cont').submit(function (formCont) {
+  var namesC = (0, _jquery2.default)('#name_cont');
+  var telephoneC = (0, _jquery2.default)('#telephone_cont');
+  var companyC = (0, _jquery2.default)('#company_cont');
+  var countryC = (0, _jquery2.default)('#country_cont');
+  var cityC = (0, _jquery2.default)('#city_cont');
+  var emailC = (0, _jquery2.default)('#email_cont');
+  var messageC = (0, _jquery2.default)('#message_cont');
 
-    if ((0, _jquery2.default)('.input_cont').is('.active')) {
-      validateFormCont();
+  var arrCont = [namesC, companyC, countryC, cityC, emailC, telephoneC, messageC];
 
-      if ((0, _jquery2.default)('.input_cont').is('.active')) {
-        validateFormCont();
-        formCont.preventDefault();
+  function validateFormCont() {
+    arrCont.forEach(function (item, i, arr) {
+      if (item.val() == "") {
+        item.addClass('active');
+        item.next().addClass('active');
+      } else if (i < 4 && !nameReg.test(item.val()) || i == 4 && !emailReg.test(arr[3].val()) || i == 5 && !numberReg.test(arr[4].val())) {
+        item.addClass('active');
+        item.next().addClass('active');
       } else {
-        _jquery2.default.ajax().done(function () {
-          (0, _jquery2.default)('.header__thanks').delay(300).fadeIn();
-          (0, _jquery2.default)('.form_cont').trigger('reset');
-          (0, _jquery2.default)('.header__thanks').delay(2500).fadeOut();
-          contactOverlay.delay(3500).fadeOut();
-          envContact.delay(3500).removeClass('active');
-          body.delay(3500).removeClass('header__body');
-        });
-        return false;
+        item.removeClass('active');
+        item.next().removeClass('active');
       }
-    } else {
-      validateFormCont();
-      formCont.preventDefault();
+    });
+  }
+
+  var formCont = (0, _jquery2.default)('.form_cont');
+  var inputCont = (0, _jquery2.default)('.input_cont');
+
+  formCont.submit(function (e) {
+    e.preventDefault();
+    validateFormCont();
+    if (!inputCont.is('.active')) {
+      _jquery2.default.ajax().done(function () {
+        thanksHead.delay(300).fadeIn();
+        formCont.trigger('reset');
+        thanksHead.delay(2500).fadeOut();
+        contactOverlay.delay(3500).fadeOut();
+        envContact.delay(3500).removeClass('active');
+        body.delay(3500).removeClass('header__body');
+      });
+      return false;
     }
   });
 
-  function validateFormCont() {
-
-    var namesC = (0, _jquery2.default)('#name_cont').val();
-    var telephoneC = (0, _jquery2.default)('#telephone_cont').val();
-    var companyC = (0, _jquery2.default)('#company_cont').val();
-    var countryC = (0, _jquery2.default)('#country_cont').val();
-    var cityC = (0, _jquery2.default)('#city_cont').val();
-    var emailC = (0, _jquery2.default)('#email_cont').val();
-    var messageC = (0, _jquery2.default)('#message_cont').val();
-
-    var inputValCont = [namesC, telephoneC, companyC, countryC, cityC, emailC, messageC];
-
-    if (inputValCont[0] == "") {
-      (0, _jquery2.default)('#name_cont').addClass('active');
-      (0, _jquery2.default)('.label_cont-name .error').addClass('active');
-    } else if (!nameReg.test(namesC)) {
-      (0, _jquery2.default)('#name_cont').addClass('active');
-      (0, _jquery2.default)('.label_cont-name .error').addClass('active');
-    } else {
-      (0, _jquery2.default)('#name_cont').removeClass('active');
-      (0, _jquery2.default)('.label_cont-name .error').removeClass('active');
-    }
-
-    if (inputValCont[1] == "") {
-      (0, _jquery2.default)('#telephone_cont').addClass('active');
-      (0, _jquery2.default)('.label_cont-telephone .error').addClass('active');
-    } else if (!numberReg.test(telephoneC)) {
-      (0, _jquery2.default)('#telephone_cont').addClass('active');
-      (0, _jquery2.default)('.label_cont-telephone .error').addClass('active');
-    } else {
-      (0, _jquery2.default)('#telephone_cont').removeClass('active');
-      (0, _jquery2.default)('.label_cont-telephone .error').removeClass('active');
-    }
-
-    if (inputValCont[2] == "") {
-      (0, _jquery2.default)('#company_cont').addClass('active');
-      (0, _jquery2.default)('.label_cont-company .error').addClass('active');
-    } else if (!nameReg.test(companyC)) {
-      (0, _jquery2.default)('#company_cont').addClass('active');
-      (0, _jquery2.default)('.label_cont-company .error').addClass('active');
-    } else {
-      (0, _jquery2.default)('#company_cont').removeClass('active');
-      (0, _jquery2.default)('.label_cont-company .error').removeClass('active');
-    }
-
-    if (inputValCont[3] == "") {
-      (0, _jquery2.default)('#country_cont').addClass('active');
-      (0, _jquery2.default)('.label_cont-country .error').addClass('active');
-    } else if (!nameReg.test(countryC)) {
-      (0, _jquery2.default)('#country_cont').addClass('active');
-      (0, _jquery2.default)('.label_cont-country .error').addClass('active');
-    } else {
-      (0, _jquery2.default)('#country_cont').removeClass('active');
-      (0, _jquery2.default)('.label_cont-country .error').removeClass('active');
-    }
-
-    if (inputValCont[4] == "") {
-      (0, _jquery2.default)('#city_cont').addClass('active');
-      (0, _jquery2.default)('.label_cont-city .error').addClass('active');
-    } else if (!nameReg.test(cityC)) {
-      (0, _jquery2.default)('#city_cont').addClass('active');
-      (0, _jquery2.default)('.label_cont-city .error').addClass('active');
-    } else {
-      (0, _jquery2.default)('#city_cont').removeClass('active');
-      (0, _jquery2.default)('.label_cont-city .error').removeClass('active');
-    }
-
-    if (inputValCont[5] == "") {
-      (0, _jquery2.default)('#email_cont').addClass('active');
-      (0, _jquery2.default)('.label_cont-email .error').addClass('active');
-    } else if (!emailReg.test(emailC)) {
-      (0, _jquery2.default)('#email_cont').addClass('active');
-      (0, _jquery2.default)('.label_cont-email .error').addClass('active');
-    } else {
-      (0, _jquery2.default)('#email_cont').removeClass('active');
-      (0, _jquery2.default)('.label_cont-email .error').removeClass('active');
-    }
-
-    if (inputValCont[6] == "") {
-      (0, _jquery2.default)('#message_cont').addClass('active');
-    } else {
-      (0, _jquery2.default)('#message_cont').removeClass('active');
-    }
-  }
-
   // --------------------------------------------------
 
+  var errorMessage = (0, _jquery2.default)('.error__text');
   (0, _jquery2.default)(window).resize(function () {
     if ((0, _jquery2.default)(window).width() < 750) {
-      (0, _jquery2.default)('.error').empty();
+      errorMessage.css('display', 'none');
     } else if ((0, _jquery2.default)(window).width() > 750) {
-      (0, _jquery2.default)('.error').text("Error message");
+      errorMessage.css('display', 'block');
     }
   });
 
   (0, _jquery2.default)(window).is(function () {
     if ((0, _jquery2.default)(window).width() < 750) {
-      (0, _jquery2.default)('.error').empty();
+      errorMessage.css('display', 'none');
     } else if ((0, _jquery2.default)(window).width() > 750) {
-      (0, _jquery2.default)('.error').text("Error message");
+      errorMessage.css('display', 'block');
     }
   });
 });

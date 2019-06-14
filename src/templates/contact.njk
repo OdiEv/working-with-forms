@@ -1,5 +1,5 @@
 ---
-title: Main
+title: Contact
 ---
 
 {% extends "./layouts/_layout.njk" %}
@@ -46,33 +46,41 @@ title: Main
           </div>
           <form class="form_cont">
             <div class="flex">
+
               <label for="name_cont" class="label_cont  label_cont-name">
                 <input type="text" id="name_cont" name="name_cont" placeholder="Your name" class="input_cont">
-                <span class="error">Error message</span>
+                <span class="error"><span class="error__text">Enter your name</span></span>
               </label>
+
               <label for="telephone_cont" class="label_cont label_cont-telephone">
                 <input type="text" id="telephone_cont" name="telephone_cont" placeholder="Telephone number" class="input_cont">
-                <span class="error">Error message</span>
+                <span class="error"><span class="error__text">Enter your phone number</span></span>
               </label>
+
               <label for="company_cont" class="label_cont label_cont-company">
                 <input type="text" id="company_cont" name="company_cont" placeholder="Company name" class="input_cont">
-                <span class="error">Error message</span>
+                <span class="error"><span class="error__text">Enter your company</span></span>
               </label>
+
               <label for="country_cont" class="label_cont label_cont-country">
                 <input type="text" id="country_cont" name="country_cont" placeholder="Country" class="input_cont">
-                <span class="error">Error message</span>
+                <span class="error"><span class="error__text">Enter your country</span></span>
               </label>
+
               <label for="city_cont" class="label_cont label_cont-city">
                 <input type="text" id="city_cont" name="city_cont" placeholder="City" class="input_cont">
-                <span class="error">Error message</span>
+                <span class="error"><span class="error__text">Enter your city</span></span>
               </label>
+
               <label for="email_cont" class="label_cont label_cont-email">
                 <input type="text" id="email_cont" name="email_cont" placeholder="Email Address" class="input_cont">
-                <span class="error">Error message</span>
+                <span class="error"><span class="error__text">Enter your email</span></span>
               </label>
+
               <label for="message_cont" class="label_cont label_cont-message">
                 <textarea name="message_cont" id="message_cont" placeholder="Your Message" class="input_cont textarea_cont"></textarea>
               </label>
+
             </div>
             <button type="submit" class="btn_form btn_form-contact">
               Send Message

@@ -1,5 +1,5 @@
 module.exports = {
-  src : {
+  src: {
     root    : 'src/',
     templates    : 'src/templates',
     templatesData: 'src/templates/data',
@@ -12,9 +12,12 @@ module.exports = {
     icons   : 'src/icons',
     helpers : 'gulp/helpers/',
     // path to svg sources for sprite:svg task
-    iconsSvg: 'src/icons'
+    iconsSvg: 'src/icons'    
   },
-  dest:{
+  node: {
+    fafree: 'node_modules/@fortawesome/fontawesome-free/'
+  },
+  dest: {
     root    : 'build/',
     css     : 'build/css/',
     html    : 'build/',

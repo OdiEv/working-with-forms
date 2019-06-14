@@ -1,83 +1,75 @@
 .header
 	&__nav
-		max-width: 408px
+		max-width: 350px
+		height: 100vh
 		position: absolute
 		top: 0
 		left: 0
-		padding: 85px 83px 280px 67px 
+		padding: 85px 20px 20px 50px 
 		background-color: $blue
 		box-sizing: border-box
 		z-index: 101
 		transform: translateX(-1000px)
 		transition: transform 0.6s ease-out
-		+r(992)
-			max-width: 492px
-			padding-left: 150px
-		+r(750)
-			max-width: 385px
-			padding-left: 58px
-			padding-right: 68px
 		+r(480)
 			max-width: 265px
 			padding: 50px 47px 100px 33px
 		&.active
 			transform: translateX(0)
-		&-list
-			ul li 
-				line-height: 44px
-				+r(480)
-					line-height: 35px
-				a
-					font-size: 26px
-					font-weight: 500
-					color: #f0f0f0
-					transition: color 0.3s ease
-					+r(480)
-						font-size: 20px
-					&:hover
-						color: $red
-		&-social
-			display: inline-block
-			margin-top: 114px
-			margin-bottom: 65px
+	&__list
+		ul li 
+			line-height: 44px
 			+r(480)
-				margin-top: 60px
+				line-height: 35px
 			a
-				margin-right: 20px
-				color: #f0f0f0
-				transition: color 0.3s ease
-				&:last-child
-					margin-right: 0
-				.fa
-					font-size: 21px
-				&:hover
-					color: $red
-		&-contacts
-			line-height: 23px
-			p
-				font-size: 14px
-				font-weight: 500
-				color: #f0f0f0
-			a
-				font-size: 14px
+				font-size: 26px
 				font-weight: 500
 				color: #f0f0f0
 				transition: color 0.3s ease
+				+r(480)
+					font-size: 20px
 				&:hover
 					color: $red
+	&__social
+		display: inline-block
+		margin-top: 114px
+		margin-bottom: 65px
+		+r(480)
+			margin-top: 60px
+		a
+			margin-right: 20px
+			color: #f0f0f0
+			transition: color 0.3s ease
+			&:last-child
+				margin-right: 0
+			+r(480)
+				margin-right: 15px
+			&:hover
+				color: $red
+		&-fa
+			font-size: 21px
+	&__contacts
+		line-height: 23px
+		p
+			font-size: 14px
+			font-weight: 500
+			color: #f0f0f0
+		a
+			font-size: 14px
+			font-weight: 500
+			color: #f0f0f0
+			transition: color 0.3s ease
+			&:hover
+				color: $red
 
 .btncloseNav
 	position: absolute
-	top: 93px
-	left: 447px
+	top: 60px
+	left: 370px
 	width: 16px
 	height: 16px
 	cursor: pointer
 	z-index: 100
-	+r(992)
-		left: 541px
-	+r(750)
-		left: 434px
 	+r(480)
 		top: 16px
 		left: 281px
