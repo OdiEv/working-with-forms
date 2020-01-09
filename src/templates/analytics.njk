@@ -9,45 +9,57 @@ title: Analytics
   {% set values = [
     {"number": "1",
      "name": "Powerful optimization",
-     "text": "Automate any campaign entity across search and social ad networks."
+     "text": "Automate any campaign entity across search and social ad networks.",
+     "img": "value-1.png"
     },
     {"number": "2",
      "name": "More control",
-     "text": "Maintain control over optimizations with custom tasks, look back periods, and configurations."
+     "text": "Maintain control over optimizations with custom tasks, look back periods, and configurations.",
+     "img": "value-2.png"
     },
     {"number": "3",
      "name": "Continuos monitoring",
-     "text": "Always have eyes on your campaign performance, even when you´re not in front of a computer."  
+     "text": "Always have eyes on your campaign performance, even when you´re not in front of a computer.",
+     "img": "value-3.png"
     }
   ]%}
 
   {% set icons = [
     {"number": "1",
-     "text": "Real-time behavioral targeting"
+     "text": "Real-time behavioral targeting",
+     "img": "analytics_icon-1.png"
     },
     {"number": "2",
-     "text": "Easily manage and prioritize overlapping audience"
+     "text": "Easily manage and prioritize overlapping audience",
+     "img": "analytics_icon-2.png"
     },
     {"number": "3",
-     "text": "Recommended audiences to identify new revenue-driving opportunities"
+     "text": "Recommended audiences to identify new revenue-driving opportunities",
+     "img": "analytics_icon-3.png"
     },
     {"number": "4",
-     "text": "Compatible with mobile web and responsive sites"
+     "text": "Compatible with mobile web and responsive sites",
+     "img": "analytics_icon-4.png"
     },
     {"number": "5",
-     "text": "Developer tools and APIs for  maximun flexibility"
+     "text": "Developer tools and APIs for  maximun flexibility",
+     "img": "analytics_icon-5.png"
     },
     {"number": "6",
-     "text": "Upload audiences for custom  targeting"
+     "text": "Upload audiences for custom  targeting",
+     "img": "analytics_icon-6.png"
     },
     {"number": "7",
-     "text": "Performance measurement  you can trust"
+     "text": "Performance measurement  you can trust",
+     "img": "analytics_icon-7.png"
     },
     {"number": "8",
-     "text": "Visual editor for easy updates"
+     "text": "Visual editor for easy updates",
+     "img": "analytics_icon-8.png"
     },
     {"number": "9",
-     "text": "Get up and running quicly"
+     "text": "Get up and running quicly",
+     "img": "analytics_icon-9.png"
     }
   ]%}
 
@@ -116,18 +128,23 @@ title: Analytics
           Contact us now
         </button>
       </div>
-      <div class="phrase-after phrase-after-blue phrase-analytics"></div>
+      <div class="phrase-after phrase-after-blue phrase-analytics" data-phrase></div>
     </section>
 
     <section class="values">
       <div class="container">
         <div class="values__inner flex">
           {% for value in values %}
-            <div class="value value-{{value.number}}">
-              <div class="flex">
-                <h3 class="h3">{{value.name}}</h3>
+            <div class="value value-{{value.number}} flex">
+              <div class="value__image">
+                <img src="img/{{value.img}}" alt="value" class="value__icon">
               </div>
-              <p>{{value.text}}</p>
+              <div class="value__info flex">
+                  <div class="value__name flex">
+                    <h3 class="h3">{{value.name}}</h3>
+                </div>
+                <p>{{value.text}}</p>
+              </div>
             </div>
           {% endfor %}
         </div>
@@ -185,7 +202,7 @@ title: Analytics
      </div>
     </section>
 
-    <section class="schedule" style="background-image: url('img/bg_icons.png');">
+    <section class="schedule" style="background-image: url('img/background.png');">
       <div class="container-schedule">
         <div class="container">
           <h2 class="h2">
@@ -195,7 +212,9 @@ title: Analytics
             Our AutoSchedule technology will post your job ad at the perfect moment, suitable to your target group´s online behaviour. AutoSchedule for optimal impact.
           </p>
         </div>
-        <div class="schedule__graphic"></div>
+        <div class="schedule__graphic">
+          <img class="schedule__image" src="img/pic_schedule.png" alt="graphic">
+        </div>
       </div> 
     </section>
 
@@ -204,9 +223,12 @@ title: Analytics
         <h2 class="h2">
           More about ora worldwide
         </h2>
-        <div class="flex">
+        <div class="icons-analytics__block flex">
           {% for icon in icons %}
-            <div class="icon icon-{{icon.number}}">
+            <div class="icons-analytics__icon">
+              <div class="icons-analytics__image">
+                <img class="icons-analytics__img" src="img/{{icon.img}}" alt="icon">
+              </div>
               <p>{{icon.text}}</p>
             </div>
           {% endfor %}

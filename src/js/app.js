@@ -2,24 +2,45 @@ import $ from 'jquery';
 
 $(document).ready( function() {
 
+  const phrase = $('[data-phrase]');
+  const fixedMenu = $('.fixed-menu');
+  const scrollTopButton = $('.scroll_top');
+  const htmlBody = $('html, body');
+  //
+  phrase.click(function() {
+    htmlBody.animate({scrollTop: phrase.offset().top - fixedMenu.height()
+    }, 1000);
+  })
+
+  // scrollWidth
+  let div = document.createElement('div');
+  div.style.overflowY = 'scroll';
+  div.style.width = '50px';
+  div.style.height = '50px';
+  div.style.visibility = 'hidden';
+  document.body.appendChild(div);
+  let scrollWidth = div.offsetWidth - div.clientWidth;
+  document.body.removeChild(div);
+  // ----------------------------------
+
   $(window).scroll(function() {
     if ($(this).scrollTop() > $(this).height()/2) {
-      $('.scroll_top').addClass('active');
+      scrollTopButton.addClass('active');
     } else {
-      $('.scroll_top').removeClass('active');
+      scrollTopButton.removeClass('active');
     }
   });
 
-  $('.scroll_top').click(function() {
-    $('html, body').stop().animate({scrollTop: 0}, 1000);
+  scrollTopButton.click(function() {
+    htmlBody.stop().animate({scrollTop: 0}, 1000);
   });
   
   $(window).scroll( function() {
       if ($(window).scrollTop() >= 250) {
-        $('.fixed-menu').fadeIn().addClass('active');
+        fixedMenu.fadeIn().addClass('active');
       }
       else {
-        $('.fixed-menu').fadeOut().removeClass('active');
+        fixedMenu.fadeOut().removeClass('active');
       }
   });
 
@@ -33,17 +54,20 @@ $(document).ready( function() {
 	iconHamb.click( function() {
     navOverlay.fadeIn();
     body.addClass('header__body');
+    body.css('padding-right', scrollWidth);
     hambNav.addClass('active');
 	});
 	closeHamb.click( function() {
     navOverlay.fadeOut();
     body.removeClass('header__body');
+    body.css('padding-right', 0);
     hambNav.removeClass('active');
 	});
   navHidden.click( function() {
     navOverlay.fadeOut();
-    hambNav.removeClass('active');
     body.removeClass('header__body');
+    body.css('padding-right', 0);
+    hambNav.removeClass('active');
   });
 	
 	const iconEnv = $('.envelope');
@@ -55,16 +79,19 @@ $(document).ready( function() {
 	iconEnv.click( function() {
     contactOverlay.fadeIn();
     body.addClass('header__body');
+    body.css('padding-right', scrollWidth);
     envContact.addClass('active');
 	});
 	closeEnv.click( function() {
     contactOverlay.fadeOut();
     body.removeClass('header__body');
+    body.css('padding-right', 0);
     envContact.removeClass('active');
 	});
   contactHidden.click( function() {
     contactOverlay.fadeOut();
     body.removeClass('header__body');
+    body.css('padding-right', 0);
     envContact.removeClass('active');
   })
 
@@ -116,6 +143,7 @@ $(document).ready( function() {
         contactOverlay.delay(3500).fadeOut();
         envContact.delay(3500).removeClass('active');
         body.delay(3500).removeClass('header__body');
+        body.delay(3500).css('padding-right', 0);
       });
       return false;
     }
@@ -139,8 +167,8 @@ $(document).ready( function() {
         item.addClass('active');
         item.next().addClass('active');
       } else if ( i < 4 && !nameReg.test(item.val()) ||
-                  i == 4 && !emailReg.test(arr[3].val()) ||
-                  i == 5 && !numberReg.test(arr[4].val())
+                  i == 4 && !emailReg.test(arr[4].val()) ||
+                  i == 5 && !numberReg.test(arr[5].val())
         ) {
         item.addClass('active');
         item.next().addClass('active');

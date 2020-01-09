@@ -78,23 +78,44 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _jquery2.default)(document).ready(function () {
 
+  var phrase = (0, _jquery2.default)('[data-phrase]');
+  var fixedMenu = (0, _jquery2.default)('.fixed-menu');
+  var scrollTopButton = (0, _jquery2.default)('.scroll_top');
+  var htmlBody = (0, _jquery2.default)('html, body');
+  //
+  phrase.click(function () {
+    htmlBody.animate({ scrollTop: phrase.offset().top - fixedMenu.height()
+    }, 1000);
+  });
+
+  // scrollWidth
+  var div = document.createElement('div');
+  div.style.overflowY = 'scroll';
+  div.style.width = '50px';
+  div.style.height = '50px';
+  div.style.visibility = 'hidden';
+  document.body.appendChild(div);
+  var scrollWidth = div.offsetWidth - div.clientWidth;
+  document.body.removeChild(div);
+  // ----------------------------------
+
   (0, _jquery2.default)(window).scroll(function () {
     if ((0, _jquery2.default)(this).scrollTop() > (0, _jquery2.default)(this).height() / 2) {
-      (0, _jquery2.default)('.scroll_top').addClass('active');
+      scrollTopButton.addClass('active');
     } else {
-      (0, _jquery2.default)('.scroll_top').removeClass('active');
+      scrollTopButton.removeClass('active');
     }
   });
 
-  (0, _jquery2.default)('.scroll_top').click(function () {
-    (0, _jquery2.default)('html, body').stop().animate({ scrollTop: 0 }, 1000);
+  scrollTopButton.click(function () {
+    htmlBody.stop().animate({ scrollTop: 0 }, 1000);
   });
 
   (0, _jquery2.default)(window).scroll(function () {
     if ((0, _jquery2.default)(window).scrollTop() >= 250) {
-      (0, _jquery2.default)('.fixed-menu').fadeIn().addClass('active');
+      fixedMenu.fadeIn().addClass('active');
     } else {
-      (0, _jquery2.default)('.fixed-menu').fadeOut().removeClass('active');
+      fixedMenu.fadeOut().removeClass('active');
     }
   });
 
@@ -108,17 +129,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   iconHamb.click(function () {
     navOverlay.fadeIn();
     body.addClass('header__body');
+    body.css('padding-right', scrollWidth);
     hambNav.addClass('active');
   });
   closeHamb.click(function () {
     navOverlay.fadeOut();
     body.removeClass('header__body');
+    body.css('padding-right', 0);
     hambNav.removeClass('active');
   });
   navHidden.click(function () {
     navOverlay.fadeOut();
-    hambNav.removeClass('active');
     body.removeClass('header__body');
+    body.css('padding-right', 0);
+    hambNav.removeClass('active');
   });
 
   var iconEnv = (0, _jquery2.default)('.envelope');
@@ -130,16 +154,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   iconEnv.click(function () {
     contactOverlay.fadeIn();
     body.addClass('header__body');
+    body.css('padding-right', scrollWidth);
     envContact.addClass('active');
   });
   closeEnv.click(function () {
     contactOverlay.fadeOut();
     body.removeClass('header__body');
+    body.css('padding-right', 0);
     envContact.removeClass('active');
   });
   contactHidden.click(function () {
     contactOverlay.fadeOut();
     body.removeClass('header__body');
+    body.css('padding-right', 0);
     envContact.removeClass('active');
   });
 
@@ -188,6 +215,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         contactOverlay.delay(3500).fadeOut();
         envContact.delay(3500).removeClass('active');
         body.delay(3500).removeClass('header__body');
+        body.delay(3500).css('padding-right', 0);
       });
       return false;
     }
@@ -210,7 +238,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
       if (item.val() == "") {
         item.addClass('active');
         item.next().addClass('active');
-      } else if (i < 4 && !nameReg.test(item.val()) || i == 4 && !emailReg.test(arr[3].val()) || i == 5 && !numberReg.test(arr[4].val())) {
+      } else if (i < 4 && !nameReg.test(item.val()) || i == 4 && !emailReg.test(arr[4].val()) || i == 5 && !numberReg.test(arr[5].val())) {
         item.addClass('active');
         item.next().addClass('active');
       } else {

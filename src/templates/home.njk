@@ -6,15 +6,18 @@ title: Home
 {% block content %}
   
   {% set features = [
-    {"numb": "1",
+    {"number": "1",
+     "img": "feature-1.png",
      "name": "Creativity",
      "text": "Creating a successful interactive marketing campaign starts with an idea. We love working collaboratively to come up with creative new strategies that turn ideas into success for our clients."
     },
-    {"numb": "2",
+    {"number": "2",
+     "img": "feature-2.png",
      "name": "Analytics",
      "text": "We´re lucky. In the world of interactive marketing, we´re never at a loss for analytics. We´ve developed the best tools and methodology to ensure success."
     },
-    {"numb": "3",
+    {"number": "3",
+     "img": "feature-3.png",
      "name": "Results",
      "text": "Our combination of creativity and analytics would fall flat without accountability. We know that for our clients, that means increasing leads and sale online."
     }
@@ -22,13 +25,16 @@ title: Home
 
   {% set icons = [
     {"numb": "1",
-     "name": "Customized reporting"
+     "name": "Customized reporting",
+     "img": "icon-1.png"
     },
     {"numb": "2",
-     "name": "Personal campaign reviews"
+     "name": "Personal campaign reviews",
+     "img": "icon-2.png"
     },
     {"numb": "3",
-     "name": "Agency managment"
+     "name": "Agency managment",
+     "img": "icon-3.png"
     }
   ]%}
 
@@ -84,7 +90,7 @@ title: Home
           Contact us now
         </button>
       </div>
-      <div class="phrase-after phrase-main"></div>
+      <div class="phrase-after phrase-main" data-phrase></div>
     </section>
 
     <section class="phrase-description">
@@ -100,11 +106,16 @@ title: Home
         <h2 class="h2">
           What drives us
         </h2>
-        <div class="flex">
+        <div class="features__block flex">
           {% for feature in features %}
-            <div class="feature feature-{{feature.numb}}">
-              <h3 class="h3">{{feature.name}}</h3>
-              <p>{{feature.text}}</p>
+            <div class="feature flex">
+              <div class="feature__image">
+                <img class="feature__icon feature__icon-{{feature.number}}" src="img/{{feature.img}}" alt="feature">
+              </div>
+              <div class="feature__info flex">
+                <h3 class="feature__name">{{feature.name}}</h3>
+                <p class="feature__text">{{feature.text}}</p>
+              </div>
               <a href="#" class="viewmore">View more</a>
             </div>
           {% endfor %}
@@ -112,7 +123,7 @@ title: Home
       </div>
     </section>
 
-    <section class="icons" style="background-image: url('img/bg_icons.png');">
+    <section class="icons" style="background-image: url('img/background.png');">
       <div class="container-icons">
         <div class="container">
           <h2 class="h2">
@@ -124,8 +135,11 @@ title: Home
           <div class="flex__out">
             <div class="flex">
               {% for icon in icons %}
-                <div class="icon icon-{{icon.numb}}">
-                  <h4 class="h4">{{icon.name}}</h4>
+                <div class="icon icon-{{icon.numb}} flex">
+                  <div class="icon__image">
+                    <img class="icon__img" src="img/{{icon.img}}"" alt="icon">
+                  </div>
+                  <h4 class="icon__text h4">{{icon.name}}</h4>
                 </div>
               {% endfor %}
             </div>

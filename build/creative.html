@@ -138,7 +138,7 @@
       <main>
 
         <section class="banner-3" style="background-image: url('img/background.png');">
-          <div class="banner-3-inner">
+          <div class="banner-3-inner" style="background-image:">
             <div class="container">
               <div class="banner-3-info">
                 <p class="p1">
@@ -152,13 +152,18 @@
                 </p>
               </div>
               <div class="banner-3-quote">
-                <div class="banner-3-quote-inner">
-                  <p>
-                    "I used the Unbounce &amp; Mailchimp integration for my signup form. I used to pay my web people $800 to connect a form to MailChimp. You saved me $800!"
-                  </p>
-                  <h6 class="h6">
-                    Joe Glenn, Neofera
-                  </h6>
+                <div class="banner-3-quote__inner flex">
+                  <div class="banner-3-quote__image">
+                    <img class="banner-3-quote__img" src="img/quote.png" alt="quote">
+                  </div>
+                  <div class="banner-3-quote-info">
+                    <p>
+                      "I used the Unbounce &amp; Mailchimp integration for my signup form. I used to pay my web people $800 to connect a form to MailChimp. You saved me $800!"
+                    </p>
+                    <h6 class="h6">
+                      Joe Glenn, Neofera
+                    </h6>
+                  </div>
                 </div>
               </div>
               <div class="banner-3-partners">
@@ -205,14 +210,14 @@
             <h2 class="h2">
               Try ora worldwide
             </h2>
-            <div class="flex">
+            <div class="phrase__form flex">
               <input type="email" class="input" placeholder="Your email">
               <button class="btn-creative">
                 Try it
               </button>
             </div>
           </div>
-          <div class="phrase-after phrase-creative"></div>
+          <div class="phrase-after phrase-creative" data-phrase></div>
         </section>
 
         <section class="conversion">
@@ -223,21 +228,21 @@
             <p>
               Testing lets you find out which messaging your customers relate to best - giving you more insight and opportunity for renenue. A/B testing your campaigns is easy with Unbounce. Simply put your ideas into a new landing page variation, click "publish" and your test is live and collecting real-time data. Now you can let your customers decide what´s best, while you avoid assumptions, and your business benefits from informed decisions.
             </p>
-            <div class="flex">
-              <div class="conversion-image conversion-red">
-                <img src="img/conversion_red.png" alt="conversion" class="image-1">
+            <div class="conversion__block flex">
+              <div class="conversion__image conversion-red">
+                <img class="conversion__img" src="img/conversion_red.png" alt="conversion">
               </div>
-              <div class="conversion-image conversion-blue">
-                <img src="img/conversion_blue.png" alt="conversion" class="image-2">
+              <div class="conversion__image conversion-blue">
+                <img class="conversion__img" src="img/conversion_blue.png" alt="conversion">
               </div>
-              <div class="conversion-image-text">
+              <div class="conversion__image-text">
                 Conversion rate
               </div>
             </div>
           </div>
         </section>
 
-        <section class="rainbow" style="background-image: url('img/rainbow_bg.png');">
+        <section class="rainbow" style="background-image: url('img/background.png');">
           <div class="container">
             <div class="flex">
               <div class="rainbow-x rainbow-1">
@@ -265,29 +270,41 @@
 
         <section class="morecolumns">
           <div class="container">
-            <div class="flex">
+            <div class="morecolumns__wrapper flex">
               <div class="morecolumns__outer">
-                <div class="morecolumns__inner morecolumns-1">
-                  <img src="img/morecol-1.png" alt="column-image" class="image image-1">
-                  <h3 class="h3">Marketing &amp;amp; Strategy</h3>
-                  <p class="p1">We want your digital marketing to be as engaging and relevant as possible.</p>
-                  <p class="p2">It doesn&#39;t matter if you&#39;re launching a new product or positioning your brand - our strategy remains the same. We conceive. We build. We get results. Simple and with confidence.</p>
+                <div class="morecolumns__inner flex">
+                  <div class="morecolumns__image">
+                    <img src="img/morecol-1.png" alt="column-image" class="morecolumns__img">
+                  </div>
+                  <div class="morecolumns__info flex">
+                    <h3 class="h3">Marketing &amp; Strategy</h3>
+                    <p class="p1">We want your digital marketing to be as engaging and relevant as possible.</p>
+                    <p class="p2">It doesn&#39;t matter if you&#39;re launching a new product or positioning your brand - our strategy remains the same. We conceive. We build. We get results. Simple and with confidence.</p>
+                  </div>
                 </div>
               </div>
               <div class="morecolumns__outer">
-                <div class="morecolumns__inner morecolumns-2">
-                  <img src="img/morecol-2.png" alt="column-image" class="image image-2">
-                  <h3 class="h3">Social Influence</h3>
-                  <p class="p1">Social Media is central to the online customer experience for over 79% of Irish businesses.</p>
-                  <p class="p2">It offers great way to interact with or to gain, an audience. Use it to build brand awareness, create positive sentiment and drive engagement. Not to mention watching some great cat videos and gifs...mow.</p>
+                <div class="morecolumns__inner flex">
+                  <div class="morecolumns__image">
+                    <img src="img/morecol-2.png" alt="column-image" class="morecolumns__img">
+                  </div>
+                  <div class="morecolumns__info flex">
+                    <h3 class="h3">Social Influence</h3>
+                    <p class="p1">Social Media is central to the online customer experience for over 79% of Irish businesses.</p>
+                    <p class="p2">It offers great way to interact with or to gain, an audience. Use it to build brand awareness, create positive sentiment and drive engagement. Not to mention watching some great cat videos and gifs...mow.</p>
+                  </div>
                 </div>
               </div>
               <div class="morecolumns__outer">
-                <div class="morecolumns__inner morecolumns-3">
-                  <img src="img/morecol-3.png" alt="column-image" class="image image-3">
-                  <h3 class="h3">Search and channel marketing</h3>
-                  <p class="p1">Search powers the web. It&#39;s the largest provider of traffic there is.</p>
-                  <p class="p2">The way it works has drastically changed. Our focus on organic SEO &amp;amp; Adwords coupled with content an conversion rate optimisation is at the heart of every strategy we create. We drive relevante traffic to your site and then make sure it converts.</p>
+                <div class="morecolumns__inner flex">
+                  <div class="morecolumns__image">
+                    <img src="img/morecol-3.png" alt="column-image" class="morecolumns__img">
+                  </div>
+                  <div class="morecolumns__info flex">
+                    <h3 class="h3">Search and channel marketing</h3>
+                    <p class="p1">Search powers the web. It&#39;s the largest provider of traffic there is.</p>
+                    <p class="p2">The way it works has drastically changed. Our focus on organic SEO &amp; Adwords coupled with content an conversion rate optimisation is at the heart of every strategy we create. We drive relevante traffic to your site and then make sure it converts.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -304,7 +321,7 @@
         </section>
       </main>
 
-      <footer class="footer" style="background-image: url('img/bg_footer.png');">
+      <footer class="footer" style="background-image: url('img/background.png');">
         <div class="footer__top">
           <div class="container flex">
             <h2 class="h2">

@@ -62,11 +62,9 @@
 		+r(768)
 			padding-top: 101px
 			padding-bottom: 266px
-			background-image: url('../img/phrase-2.png')
 		+r(480)
 			padding-top: 61px
 			padding-bottom: 212px
-			background-position: 70% bottom
 		.container
 			max-width: 615px
 		p
@@ -80,29 +78,25 @@
 				line-height: 25px
 
 .features
-	padding-top: 110px
-	padding-bottom: 136px
+	padding: 110px 0 136px
 	+r(992)
-		padding-top: 79px
-		padding-bottom: 92px
+		padding: 79px 0 92px
 	+r(750)
-		padding-top: 53px
-		padding-bottom: 72px
+		padding: 53px 0 72px
 	+r(480)
-		padding-top: 43px
-		padding-bottom: 47px
+		padding: 43px 0 47px
 	.h2
-		margin-bottom: 55px
+		margin-bottom: 50px
 		color: $blue
 		text-transform: uppercase
 		text-align: center
 		+r(992)
-			margin-bottom: 43px
+			margin-bottom: 35px
 		+r(750)
-			margin-bottom: 23px
+			margin-bottom: 20px
 		+r(480)
 			font-size: 28px
-	.flex
+	&__block 
 		justify-content: space-around
 		+r(750)
 			flex-direction: column
@@ -110,32 +104,55 @@
 	.feature
 		position: relative
 		max-width: 305px
-		padding-bottom: 45px
+		flex-direction: column
+		align-items: center
 		text-align: center
-		box-sizing: border-box
 		+r(992)
-			padding: 0 5px 45px
+			padding: 0 5px
 		+r(750)
+			padding: 0
 			margin-bottom: 20px
-			padding-bottom: 30px
 		+r(480)
+			flex-direction: row
 			max-width: 405px
-			position: relative
-			padding: 0 0 35px 73px 
 			text-align: left
+			align-items: flex-start
 		&:last-child
 			+r(750)
 				margin-bottom: 0
-		.h3
-			margin-top: 27px
+		&__image
+			position: relative
+			min-width: 140px
+			min-height: 130px
+			+r(480)
+				margin-top: 40px
+				min-width: 85px
+				min-height: 90px
+				margin-right: 2vw
+		&__icon
+			position: absolute
+			bottom: 0
+			left: 50%
+			transform: translateX(-50%)
+			+r(480)
+				position: relative
+				max-width: 75px
+				max-height: 85px
+		&__info
+			margin-top: 20px
+			margin-bottom: 45px
+			flex-direction: column
+			align-items: center
+			+r(750)
+				margin-top: 10px
+				margin-bottom: 30px
+		&__name
 			margin-bottom: 10px
 			color: $red
 			text-transform: uppercase
-			+r(750)
-				margin-top: 12px
 			+r(480)
 				margin: 5px 0
-		p
+		&__text
 			color: $dark_blue
 			line-height: 20px
 			+r(480)
@@ -143,8 +160,6 @@
 		.viewmore
 			position: absolute
 			bottom: 0
-			left: 50%
-			transform: translateX(-50%)
 			padding-bottom: 4px
 			font-weight: 600
 			color: $blue
@@ -154,40 +169,11 @@
 			transition: border-bottom 0.3s ease
 			transition: color 0.3s ease
 			+r(480)
-				left: 71px
+				left: 95px
 				transform: none
 			&:hover
 				color: $red
 				border-bottom: 1px solid $red
-		&:before
-			content: ''
-			display: inline-block
-			width: 132px
-			height: 121px
-			background: url("../img/sprite1.png") no-repeat
-			box-sizing: border-box
-			+r(480)
-				position: absolute
-				top: 0
-				left: -8px
-				width: 80px
-				height: 80px
-				background-image: url("../img/sprite1_320.png")
-		&-1
-			&:before
-				background-position: 24px 0
-				+r(480)
-					background-position: 0 0
-		&-2
-			&:before
-				background-position: -122px 0
-				+r(480)
-					background-position: 0 -94px
-		&-3
-			&:before
-				background-position: -294px 0
-				+r(480)
-					background-position: 0 -180px
 
 .icons
 	padding: 51px 58px 50px 52px
@@ -234,56 +220,36 @@
 				margin-top: 30px
 	.icon
 		position: relative
-		max-width: 250px
 		height: 75px
-		padding-left: 95px
-		padding-top: 15px
+		margin-right: 20px
 		text-align: left
+		align-items: center
 		line-height: 24px
 		box-sizing: border-box
 		+r(992)
+			flex-direction: row
+			justify-content: flex-start
+			margin-right: 0
 			margin-bottom: 24px
 			max-width: 100%
 		+r(480)
 			height: 60px
 			margin-bottom: 32px
-			padding-left: 85px
-			padding-top: 8px
-			line-height: 21px
+			line-height: 18px
 		&:last-child
+			margin-right: 0
 			+r(992)
 				margin-bottom: 0
-		&:before
-			content: ''
-			display: inline-block
-			position: absolute
-			top: 0
-			left: 0
-			width: 78px
-			height: 75px
-			background: url("../img/sprite2.png") no-repeat
-			box-sizing: border-box
+		&__image
+			margin-right: 20px
 			+r(480)
-				left: 15px
-				width: 60px
-				height: 60px
-				background-image: url("../img/sprite2_320.png")
-		&-1
-			&:before
-				background-position: 2px 0
-				+r(480)
-					background-position: 0 0
-		&-2
-			&:before
-				background-position: -92px 0
-				+r(480)
-					background-position: 0 -80px
-		&-3
-			&:before
-				background-position: -187px 0
-				+r(480)
-					background-position: 0 -158px
-		.h4
+				width: 58px
+				margin-right: 10px
+		&__img
+			width: 100%
+			min-width: 55px
+			height: 100%
+		&__text
 			text-transform: uppercase
 		p
 			+r(992)

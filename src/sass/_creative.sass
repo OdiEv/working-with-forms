@@ -13,13 +13,12 @@
 		+r(992)
 			padding-top: 55px
 			padding-bottom: 38px
-			background-image: url('../img/creative_bg_768.png')
 			background-position: 60% 50%
 		+r(750)
 			padding-top: 283px
 			padding-bottom: 32px
-			background-image: url('../img/creative_bg_320.png') 
-			background-position: 50% 5%
+			background: url('../img/creative_bg_320.png') 50% 5%
+			background-size: cover
 		+r(480)
 			padding-top: 343px
 			background-position: 50% 0%
@@ -100,13 +99,13 @@
 			border-left: 15px solid $quote_bg
 			+r(480)
 				display: none
-		&-inner
+		&__inner
 			position: relative
-			padding: 18px 19px 17px 100px
+			padding: 18px
 			background-color: $quote_bg
 			box-sizing: border-box
 			+r(480)
-				padding: 16px 17px 16px 78px
+				padding: 16px
 			p
 				font-size: 15px
 				line-height: 18px
@@ -122,22 +121,13 @@
 				color: $red
 				+r(480)
 					margin-top: 7px
-			&:before
-				content: ''
-				width: 69px
-				height: 69px
-				position: absolute
-				left: 20px
-				top: 50%
-				transform: translateY(-50%)
-				background: url("../img/quote.png") no-repeat
-				+r(480)
-					width: 51px
-					height: 51px
-					top: 18px
-					left: 16px
-					transform: none
-					background: url("../img/quote_320.png") no-repeat
+		&__image
+			margin-right: 12px
+		&__img
+			+r(480)
+				width: 50px
+				height: 50px
+
 	&-partners
 		position: absolute
 		top: -72px
@@ -348,7 +338,7 @@
 			margin-bottom: 28px
 			+r(480)
 				margin-bottom: 15px
-	.flex
+	&__form
 		justify-content: center
 		.input
 			margin: 0
@@ -380,11 +370,11 @@
 		background-size: cover
 		+r(768)
 			padding-top: 68px
-			padding-bottom: 398px
+			padding-bottom: 450px
 			background-image: url('../img/phrase_question-2.png')
 		+r(480)
 			padding-top: 45px
-			padding-bottom: 194px
+			padding-bottom: 220px
 			background-image: url('../img/phrase_question-3.png')
 		.container
 			max-width: 800px
@@ -432,7 +422,7 @@
 		+r(650)
 			font-size: 16px
 			line-height: 24px
-	.flex
+	&__block
 		position: relative
 		margin-top: 35px
 		justify-content: center
@@ -440,7 +430,7 @@
 			margin-top: 31px
 		+r(650)
 			margin-top: 11px
-	&-image
+	&__image
 		padding-top: 26px
 		padding-bottom: 20px
 		box-sizing: border-box
@@ -463,17 +453,19 @@
 			background-color: #fff
 			+r(650)
 				top: 47px
-		.image-1
-			+r(650)
-				width: 86px
-		.image-2
-			+r(650)
-				width: 85px
 	&-red
 		padding-right: 83px
 		border-right: 2px dashed $blue
+		+r(480)
+			padding-right: 60px
 	&-blue
 		padding-left: 83px
+		+r(480)
+			padding-left: 60px
+	&__img
+		+r(650)
+			width: 85px
+
 
 .rainbow
 	padding: 86px 41px 96px
@@ -544,7 +536,7 @@
 	.container
 		max-width: 1320px
 		padding: 0 10px
-	.flex
+	&__wrapper
 		justify-content: space-between
 		+r(992)
 			flex-direction: column
@@ -553,7 +545,7 @@
 		max-width: 408px
 		margin: 0 5px
 		padding: 10px
-		background:  url('../img/rainbow_bg.png') no-repeat center
+		background: url('../img/background.png') no-repeat center
 		background-size: cover
 		box-sizing: border-box
 		+r(992)
@@ -566,88 +558,78 @@
 				margin-bottom: 0
 	&__inner
 		position: relative
+		flex-direction: column
 		height: 100%
-		padding-top: 226px
+		padding-top: 45px
 		padding-bottom: 33px
 		background-color: $grey
 		box-sizing: border-box
 		+r(992)
-			padding: 42px 20px 36px 224px
+			padding: 42px 20px 36px 20px
+			flex-direction: row
 		+r(650)
-			padding: 32px 10px 28px 184px
+			padding: 32px 10px 28px 10px
 		+r(480)
-			padding: 120px 17px 22px
-		.image
+			flex-direction: column
+			padding: 15px 17px 22px
+	&__image
+		position: relative
+		height: 150px
+		+r(992)
+			margin-right: 3vw
+		+r(480)
+			height: 100px
+			margin-right: 0
+	&__img
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		+r(992)
+			position: relative
+		+r(768)
+			max-width: 120px
+		+r(480)
 			position: absolute
-			left: 50%
-			transform: translateX(-50%)
-			+r(992)
-				top: 46px
-				transform: none
-			+r(650)
-				top: 36px
-			+r(480)
-				top: 23px
-				left: 50%
-				transform: translateX(-50%)
-			&-1
-				top: 45px
-				+r(992)
-					left: 40px
-				+r(650)
-					left: 15px
-				+r(480)
-					width: 89px
-			&-2
-				top: 59px
-				+r(992)
-					left: 50px
-				+r(650)
-					left: 25px
-				+r(480)
-					width: 93px
-			&-3
-				top: 60px
-				+r(992)
-					left: 48px
-				+r(650)
-					left: 28px
-				+r(480)
-					width: 83px
-		.h3
-			margin-bottom: 22px
-			font-size: 26px
-			line-height: 29px
-			text-transform: uppercase
-			text-align: center
-			color: $blue
-			+r(992)
-				text-align: left
-				margin-bottom: 10px
-			+r(480)
-				margin-bottom: 7px
-				text-align: center
-		p
-			padding-left: 35px
-			padding-right: 25px
-			font-size: 16px
-			line-height: 23px
-			+r(1260)
-				padding-left: 15px
-				padding-right: 10px
-			+r(992)
-				padding: 0
-		.p1
+			max-width: 85px
+	&__info
+		flex-direction: column
+		margin-top: 40px
+		+r(992)
+			margin-top: 0
+		+r(480)
+			margin-top: 10px
+	.h3
+		margin-bottom: 22px
+		font-size: 26px
+		line-height: 29px
+		text-transform: uppercase
+		text-align: center
+		color: $blue
+		+r(992)
+			text-align: left
 			margin-bottom: 10px
-			font-weight: 500
-			color: $blue_light
-			+r(480)
-				margin-bottom: 7px
-		.p2
-			color: $blue
-	&-3
-		.h3
-			margin-bottom: 13px
+		+r(480)
+			margin-bottom: 7px
+			text-align: center
+	p
+		padding-left: 35px
+		padding-right: 25px
+		font-size: 16px
+		line-height: 23px
+		+r(1260)
+			padding-left: 15px
+			padding-right: 10px
+		+r(992)
+			padding: 0
+	.p1
+		margin-bottom: 10px
+		font-weight: 500
+		color: $blue_light
+		+r(480)
+			margin-bottom: 7px
+	.p2
+		color: $blue
 
 .preview
 	padding-top: 66px

@@ -73,7 +73,7 @@
 		max-width: 350px
 		padding-bottom: 0
 		text-align: center
-		box-sizing: border-box
+		flex-direction: column
 		+r(992)
 			margin: 0 20px
 		+r(750)
@@ -83,8 +83,8 @@
 			position: relative
 			max-width: 405px
 			min-height: 90px
-			margin-bottom: 20px
-			padding: 3px 0 0 95px
+			padding-top: 3px 
+			flex-direction: row
 			text-align: left
 		&:first-child
 			+r(992)
@@ -94,8 +94,26 @@
 				margin-right: 0
 			+r(750)
 				margin-bottom: 0
-		.flex
-			margin-top: 19px
+		&__image
+			position: relative
+			height: 140px	
+			+r(480)
+				margin-right: 3vw
+				min-width: 90px
+				height: 90px
+		&__icon
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+			+r(480)
+				position: relative
+				max-width: 90px
+				max-height: 90px
+		&__info
+			flex-direction: column
+		&__name
+			margin-top: 15px
 			margin-bottom: 10px
 			color: $red
 			text-transform: uppercase
@@ -103,8 +121,6 @@
 			align-items: center
 			+r(992)
 				height: 48px
-				margin-top: 14px
-				margin-bottom: 5px
 			+r(750)
 				margin: 0
 			+r(480)
@@ -117,35 +133,6 @@
 			line-height: 23px
 			font-size: 17px
 			font-weight: 500
-		&:before
-			content: ''
-			display: inline-block
-			width: 135px
-			height: 130px
-			background: url("../img/sprite3.png") no-repeat
-			box-sizing: border-box
-			+r(480)
-				position: absolute
-				top: 0
-				left: 0
-				width: 85px
-				height: 85px
-				background-image: url("../img/sprite3_320.png")
-		&-1
-			&:before
-				background-position: 6px 0
-				+r(480)
-					background-position: 0 2px
-		&-2
-			&:before
-				background-position: -353px 0
-				+r(480)
-					background-position: 0 -139px
-		&-3
-			&:before
-				background-position: -707px 0
-				+r(480)
-					background-position: 0 -280px
 
 .print
 	padding-top: 90px
@@ -290,14 +277,23 @@
 			font-size: 16px
 			line-height: 24px
 	&__graphic
+		position: relative
 		height: 382px
-		background: url('../img/pic_schedule.png') no-repeat bottom center
-		background-size: cover
+		overflow: hidden
 		+r(768)
-			height: 352px
-			background-image: url('../img/pic_schedule_768.png')
+			height: 350px
 		+r(480)
-			height: 265px
+			height: 200px
+	&__image
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		+r(768)
+			width: 200vw
+		+r(480)
+			width: 150vw
+		
 
 .icons-analytics
 	padding-top: 120px
@@ -317,12 +313,13 @@
 			margin-bottom: 29px
 			font-size: 27px
 			line-height: 30px
-	.flex
+	&__block
 		flex-wrap: wrap
 		justify-content: space-evenly
 		+r(992)
 			margin: 0 12px
-	.icon
+	&__icon
+		position: relative
 		width: 330px
 		margin-bottom: 66px
 		+r(992)
@@ -330,46 +327,15 @@
 		+r(480)
 			margin-bottom: 18px
 		p
-			margin-top: 5px
 			font-size: 19px
 			font-weight: 500
 			line-height: 24px
-			+r(480)
-				margin-top: 2px
-		&:before
-			content: ''
-			display: inline-block
-			width: 60px
-			height: 55px
-			background: url("../img/sprite4.png") no-repeat
-			box-sizing: border-box			
-		&-1
-			&:before
-				background-position: 0 0
-		&-2
-			&:before
-				background-position: -63px 0
-		&-3
-			&:before
-				background-position: -124px 0
-		&-4
-			&:before
-				background-position: -186px 0
-		&-5
-			&:before
-				background-position: -253px 0
-		&-6
-			&:before
-				background-position: -324px 0
-		&-7
-			&:before
-				background-position: -391px 0
-		&-8
-			&:before
-				background-position: -466px 0
-		&-9
-			&:before
-				background-position: -543px 0
+	&__image
+		height: 55px
+	&__img
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
 
 .partners-analytics
 	padding: 113px 0 110px
