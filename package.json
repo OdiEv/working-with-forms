@@ -64,6 +64,6 @@
     "hoek": "^4.2.1",
     "jquery": "^3.4.1",
     "object-fit": "^0.4.3",
-    "static-eval": "^2.0.0"
+    "static-eval": "^2.0.2"
   }
 }
