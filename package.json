@@ -47,7 +47,7 @@
     "gulp-util": "^3.0.7",
     "gulp.spritesmith": "^6.9.0",
     "i": "^0.3.6",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "postcss-svg": "2.1.0",
     "require-dir": "^0.3.2",
     "rimraf": "2.6.1",
